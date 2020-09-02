@@ -1,16 +1,16 @@
 body{
-  background-color: #EA9AB2;
+  background-color: white;
 }
 
 #bigName{
-  color: #E27396;
+  color: rgb(255, 225, 234);
   text-align: center;
   font-size: 180%;
   font-family: 'Abril Fatface', cursive;
 }
 
 #conts{
-  background-color: rgba(255, 255, 255, 0.6);;
+  background-color: rgb(255, 225, 234);
   width: 95%;
   text-align: center;
   margin-left: 2.5%;
@@ -36,7 +36,7 @@ body{
 }
 
 .shortNavActive{
-  background-color: #cccccc;
+  background-color: rgb(255, 225, 234);
   outline: none;
   border-radius: 25px;
   padding: 7px 15px;
@@ -48,7 +48,7 @@ body{
 }
 
 .shortNav:hover{
-  background-color: #cccccc;
+  background-color: rgb(255, 225, 234);
 }
 
 .longNav{
