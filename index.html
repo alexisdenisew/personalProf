@@ -1,66 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="assets/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="assets/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width">
     <script src="https://kit.fontawesome.com/f402348af9.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;500&display=swap" rel="stylesheet">
     <title>Alexis Williams</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <script src="script.js"></script>
 
-    <h1 id = "bigName">
-      alexis denise williams
-    </h1>
+    <div id = "picCONT">
+    <br>
+    <img id = "pic" src="assets/bigname.PNG">
+    </div>
 
     <br>
 
-    <div id = "inLined">
-        <a class = "linkTop" href = "#"><button class = "shortNavActive"><i class="fas fa-home"></i></button></a>
-        <a class = "linkTop" href = "about.html"><button class = "shortNav"><i class="fas fa-user"></i></button></a>
-        <a class = "linkTop" href = "features.html"><button class = "shortNav"><i class="fas fa-newspaper"></i></button></a>
-        <a class = "linkTop" href = "social.html"><button class = "shortNav"><i class="fas fa-mobile-alt"></i></button></a> <br>
-      </div>
-
-      <br>
+    <div class="scrollmenu">
+      <a class= "activeLink" href="#home">Home</a>
+      <a class= "inactiveLink" href="about.html">About</a>
+      <a class= "inactiveLink" href="links.html">Social Links</a>
+      <a class= "inactiveLink" href="writing.html">Writing</a>
+      <a class= "inactiveLink" href="photo.html">Photography</a>
+      <a class= "inactiveLink" href="portfolio.html">Portfolio</a>
+      <a class= "inactiveLink" href="features.html">Features</a>
+      <a class= "inactiveLink" href="contact.html">Contact</a>
+    </div>
 
     <div id = "conts">
 
-      <br>
 
-      <div id = "stacker">
-        <a class = "link" href = "http://www.pb-resources.com/" target = "_blank"><button class = "longNav" >pb-resources</button></a> <br>
-        <a class = "link" href = "#"><button class = "longNav">landslide - coming soon</button></a> <br>
-        <a class = "link" href = "https://www.patreon.com/alexisdenisew" target = "_blank"><button class = "longNav">patreon</button></a> <br>
-        <a class = "link" href = "https://medium.com/@alexisdenisew" target = "_blank"><button class = "longNav">medium</button></a> <br>
-        <a class = "link" href = "https://open.spotify.com/show/3mA5eAmccSJ87mtqAtsOwl?si=F1iWjCuDRki9HnUrCdLyZw" target = "_blank"><button class = "longNav">clueless</button></a> <br>
-        <a class = "link" href = "https://anchor.fm/alexis-williams45/support" target = "_blank"><button class = "longNav">support clueless</button></a> <br>
-      </div>
+        <div id = "special">
+          <p id= "specialTXT">Please visit:</p>
+        <a id= "specialLink" href="https://www.pb-resources.com" target = "_blank">PB RESOURCES</a> <br>
+          <p id= "specialTXT">the Black Lives Matter toolkit for more info on how to combat injustice. </p>
+        </div>
 
-      <br>
+
+
+
+
 
     </div>
-    <br>
 
   </body>
 </html>
