@@ -1,0 +1,126 @@
+body{ 
+  background-color: #344e41;
+}
+
+
+
+@media screen and (min-width: 601px) {
+  .desktop{
+    width: 90%;
+    padding-bottom: 200px;
+    margin-top: 10%;
+  }
+  #cont{
+    margin-left: 10%;
+  }
+  .topBar{
+    padding: 15px ;
+  }
+  #page{
+    text-align: center;
+    margin-top: 6%;
+  }
+
+  #google{
+    width: 35%;
+    height: auto;
+  }
+
+  #message{
+    width: 20%;
+    margin-left: 40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  #icon{
+    width: 35%;
+  }
+
+  #space{
+    padding: 50px;
+  }
+  #iconHolder{
+  margin-left: 25%;
+  margin-right: 25%;
+}
+}
+
+@media screen and (max-width: 600px) {
+  .desktop{
+    width: 100%;
+    padding-bottom: 200px;
+    margin-top: 10%;
+  }
+  .topBar{
+    padding: 10px;
+  }
+
+  #page{
+    text-align: center;
+    margin-top: 15%;
+  }
+
+  #google{
+    width: 60%;
+    height: auto;
+  }
+  #message{
+    width: 70%;
+    margin-left: 15%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  #icon{
+    width: 80%;
+  }
+  #space{
+    padding: 40px;
+  }
+  #iconHolder{
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+
+.desktop{
+  background-color: #a3b18a;
+  text-align: center;
+  border-radius: 12px;
+  }
+
+.topBar{
+border-radius: 12px;
+background-color: #dad7cd;
+text-align: left;
+}
+
+#close{
+  background-color: red;
+  border-radius: 50%;
+  padding: 10px;
+  border: none;
+}
+#smaller{
+  background-color: yellow;
+  border-radius: 50%;
+  padding: 10px;
+  border: none;
+  
+}
+#minimize{
+  background-color: green;
+  border-radius: 50%;
+  padding: 10px;
+  border: none;
+}
+
+#message{
+  background-color: #dad7cd;
+  border-radius: 15px;
+}
+
+.column{
+  float: left;
+  width: 25%;
+}
+
