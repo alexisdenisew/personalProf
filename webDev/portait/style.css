@@ -1,0 +1,114 @@
+#mainTitle{ 
+  color: black;
+  text-align: center;
+  font-family: 'Shrikhand', cursive;
+  font-size: 700%;
+}
+
+#text{
+  margin-top: 10%;
+  font-family: 'Lato', sans-serif;
+  font-size: 200%;
+}
+
+#ent{
+  text-align: center;
+}
+
+#mainTitle:hover{ 
+  color: blue;
+}
+
+#face{
+  width: 500px; 
+  height: 570px;
+  border-radius: 50%;
+  background-color: #fae84d;
+  margin-left: 30%;
+  margin-top: 8%;
+}
+
+
+#eyeL{
+  width: 150px; 
+  height: 100px;
+  border-radius: 50%;
+  background-image: url("assets/eye2.PNG");
+  background-size: cover;
+}
+
+#eyeR{
+  width: 150px; 
+  height: 100px;
+  border-radius: 50%;
+  background-image: url("assets/eye.PNG");
+  background-size: cover;
+}
+
+#eyeR:hover{
+  width: 150px; 
+  height: 100px;
+  border-radius: 50%;
+  background-image: url("assets/Beye2.PNG");
+  background-size: cover;
+}
+
+#eyeL:hover{
+  width: 150px; 
+  height: 100px;
+  border-radius: 50%;
+  background-image: url("assets/Beye.PNG");
+  background-size: cover;
+}
+
+#nose{
+  width: 150px; 
+  height: 150px;
+  border-radius: 50%;
+  background-image: url("assets/nose.png");
+  background-size: cover;
+  margin-left: 35%;
+}
+
+#nose:hover{
+  width: 150px; 
+  height: 150px;
+  border-radius: 50%;
+  background-image: url("assets/Bnose.png");
+  background-size: cover;
+  margin-left: 35%;
+}
+
+#lips{
+  width: 250px; 
+  height: 150px;
+  border-radius: 50%;
+  background-image: url("assets/lips.png");
+  background-size: cover;
+  margin-left: 25%;
+}
+
+#lips:hover{
+  width: 250px; 
+  height: 250px;
+  border-radius: 50%;
+  background-image: url("assets/Blips.png");
+  background-size: cover;
+  margin-left: 25%;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  margin-left: 14%;
+}
+
+#faceCont{
+  padding-top: 150px;
+}
+
+#padding2{
+  padding-top: 90px;
+}
+
+
