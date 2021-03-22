@@ -5,8 +5,9 @@ body{
 /* totally new stuff */
 
 #pic{
-  width: 75%;
+  width: 15%;
   max-width: 400px;
+  min-width: 150px;
   height: auto;
   text-align: center;
 }
@@ -23,7 +24,7 @@ div.scrollmenu {
 }
 
 .activeLink{
-  color:#a2d6f9;
+  color:#FF477E;
 }
 
 .inactiveLink{
@@ -31,11 +32,11 @@ div.scrollmenu {
 }
 
 .activeLink:hover{
-  color:#a2d6f9;
+  color:#FF477E;
 }
 
 .inactiveLink:hover{
-  color: #ffd500;  
+  color: #ff99ac;  
 }
 
 div.scrollmenu a {
@@ -53,11 +54,11 @@ div.scrollmenu a {
 #special{
   margin-top: 10%;
   text-align: center;
-  background-color: #fcf6bd;
+  background-color: #ff99ac;
   padding: 40px ;
   margin-left: 5%;
   margin-right: 5%;
-  border-radius: 5%;
+  border-radius: 5px;
 }
 
 #specialTXT{
@@ -67,7 +68,13 @@ div.scrollmenu a {
 
 #specialLink{
   font-size: 150%;
-  color: #a2d6f9;
+  color: #fae0e4;
+  font-family: 'Francois One', sans-serif;
+}
+
+#specialLink3{
+  font-size: 150%;
+  color: #FF477E;
   font-family: 'Francois One', sans-serif;
 }
 
@@ -113,11 +120,11 @@ div.scrollmenu a {
 #special2{
   margin-top: 10%;
   text-align: center;
-  background-color: #fcf6bd;
+  background-color: #ff99ac;
   padding: 35px ;
   margin-left: 5%;
   margin-right: 5%;
-  border-radius: 5%;
+  border-radius: 5px;
 }
 #specialTXT{
   font-family: 'Noto Sans KR', sans-serif;
@@ -140,3 +147,4 @@ div.scrollmenu a {
   font-weight: 500;
   font-size: 150%;
 }
+
