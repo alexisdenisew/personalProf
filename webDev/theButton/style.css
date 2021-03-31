@@ -10,9 +10,21 @@
   border: none;
   font-size: 400%;
   font-family: 'Shrikhand', cursive;
-  
+  background-color: #e6e6e6;
 }
 
 #tit{
   font-family: 'Shrikhand', cursive;
+}
+
+@media screen and (max-width: 600px) {
+  #myButton {
+    padding: 50px 70px;
+    font-size: 100%;
+  }
+  #tit{
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 100%;
+  }
 }
