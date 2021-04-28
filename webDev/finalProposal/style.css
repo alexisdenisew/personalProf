@@ -1,0 +1,46 @@
+#center{
+  text-align: center;
+}
+
+#logo{
+  width: 20%;
+  height: auto; 
+  margin-top: 5%;
+}
+
+.button{
+  background-color: #ED6892;
+  font-family: 'Anton', sans-serif;
+  margin: 5%;
+  padding: 2px;
+  border-radius: 12px;
+  font-size: 80%;
+  text-align: center;
+  letter-spacing: 7px;
+}
+
+.content{
+  display: none;
+  background-color: #FFD4EE;
+  padding: 2px;
+  border-radius: 12px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#wf{
+  width: 50%;
+  height: auto;
+  margin-bottom: 5%;
+}
+
+h1{
+  font-family: 'Anton', sans-serif;
+}
+
+p{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  font-family: 'Dosis', sans-serif;
+}
