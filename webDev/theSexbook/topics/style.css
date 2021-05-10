@@ -1,0 +1,98 @@
+/* media query for screens larger than a mobile device */
+
+@media screen and (min-width: 601px) {
+  /* seting desired size for an image as well as its distance for other page elements */
+  #articleImg{
+    width: 30%;
+    height: auto;
+    margin: 2%;
+  }
+  #topper1{
+    /* setting a distance from other elements and size for the top tittle */
+    margin: 5%;
+    font-size: 350%;
+  }
+  p{
+    /* setting size for all paragraph text */
+    font-size: 150%;
+  }
+  #listITM{
+    /* setting font and size for all list items */
+    font-family: 'Rubik', sans-serif;
+    font-size: 120%;
+  }
+}
+
+
+/* media query for mobile device screens */
+@media screen and (max-width: 600px) {
+  #articleImg{
+    width: 50%;
+    height: auto;
+    margin: 5%;
+  }
+  #topper1{
+    margin: 5%;
+  }
+  #titler{
+    /* setting font size for all sub-titles */
+    font-size: 120%;
+  }
+  #titler2{
+    font-size: 100%;
+  }
+  #listITM{
+    font-family: 'Rubik', sans-serif;
+    font-size: 80%;
+  }
+}
+
+#topper1, p{
+  /* setting font for all titles and paragraph text  */
+  font-family: 'Rubik', sans-serif;
+}
+
+#titler, #titler2{
+  /* setting font for all titles */
+  font-family: 'Krona One', sans-serif;
+}
+
+#titler{
+  /* setting color for titler titles  */
+  color: #ED6992;
+}
+
+.false{
+  /* setting color for false titles */
+  color: #ED6992;
+}
+
+.true{
+  /* setting color for true titles  */
+  color:#5CB454;
+}
+
+#side{
+  /* creating a smaller div to live inside a biger div as a pseudo sub-division */
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#smaller{
+  /* creating an even smaller div to live inside a biger div as a pseudo sub-division */
+  margin: 5%;
+  border: solid;
+  padding: 35px;
+}
+
+#linky{
+  /* setting color for links */
+  color:#5CB454;
+}
+
+#listITM{
+  /* setting font and size for list items */
+  font-family: 'Rubik', sans-serif;
+  font-size: 120%;
+}
