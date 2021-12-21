@@ -1,7 +1,3 @@
-body{
-  background-color: white;
-  cursor: url(assets/bigname.PNG);
-}
 
 /* totally new stuff */
 
@@ -17,67 +13,10 @@ body{
   text-align: center;
 }
 
-div.scrollmenu {
-  color: black;
-  text-align: center;
-  overflow: auto;
-  white-space: nowrap;
-}
-
-.activeLink{
-  color:#FF477E;
-}
-
-.inactiveLink{
-  color: black;  
-}
-
-.activeLink:hover{
-  color:#FF477E;
-}
-
-.inactiveLink:hover{
-  color: #ff99ac;  
-}
-
-div.scrollmenu a {
-  display: inline-block;
-  font-family: 'Francois One', sans-serif;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
-}
-
 #links{
   text-align: center;
 }
 
-#special{
-  margin-top: 10%;
-  text-align: center;
-  background-color: #ff99ac;
-  padding: 40px ;
-  margin-left: 5%;
-  margin-right: 5%;
-  border-radius: 5px;
-}
-
-#specialTXT{
-  font-size: 150%;
-  font-family: 'Francois One', sans-serif;
-}
-
-#specialLink{
-  font-size: 150%;
-  color: #fae0e4;
-  font-family: 'Francois One', sans-serif;
-}
-
-#specialLink3{
-  font-size: 150%;
-  color: #FF477E;
-  font-family: 'Francois One', sans-serif;
-}
 
 #imgSetting{
   width: 60%;
@@ -91,8 +30,6 @@ div.scrollmenu a {
 
 #centered{
   text-align: center;
-  margin-left: 5%;
-  margin-right: 5%;
 }
 
 @media screen and (min-width: 601px) {
@@ -149,3 +86,164 @@ div.scrollmenu a {
   font-size: 150%;
 }
 
+
+
+/* NEW UPDATE */
+
+div.scrollmenu {
+  color: black;
+  text-align: center;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.activeLink{
+  color:#95d5b2;
+}
+
+.activeLink:hover{
+  color:#95d5b2;
+}
+
+.inactiveLink{
+  color: black;  
+}
+
+.inactiveLink:hover{
+  color: #95d5b2;  
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  font-family: 'Francois One', sans-serif;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+#namePlate{
+  text-align: center;
+  font-family: 'Moo Lah Lah', cursive;
+}
+
+#topStuff{
+  margin: 2%;
+}
+
+@media screen and (min-width: 601px) {
+  #namePlate{
+    margin-left: 5%;
+  }
+  #namer{
+    font-size: 250%;
+  }
+  #alerter{
+   margin-left: 6%;
+  }
+  #alerterWords{
+    font-size: 90%;
+  }
+  #frontImg{
+    width: 900px;
+    height: 550px;
+    background-image: url("assets/front2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #namePlate{
+    margin-top: 5%;
+  }
+  #namer{
+    font-size: 250%;
+  }
+  #alerter{
+    text-align: center; 
+    margin-top: 3%;
+    margin-bottom: 5%;
+  }
+  #alerterWords{
+    font-size: 60%;
+  }
+  #frontImg{
+    margin: 0 auto;
+    width: 350px;
+    height: 450px;
+    background-image: url("assets/front.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+#frontImg{
+  text-align: center;
+}
+
+#alerterWords{
+  color: black;
+  font-family: 'Mulish', sans-serif;
+}
+
+#linkStyle{
+  color: #95d5b2;
+}
+
+/* about page */
+@media screen and (min-width: 601px) {
+  #aboutImg{
+    width: 100%;
+  }
+  #down{
+    margin-top: 6%;
+  }
+
+  #meText{
+    font-size: 115%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #aboutImg{
+    width: 100%;
+  }
+  #down{
+    margin-top: 2%;
+    text-align: center;
+  }
+  #meText{
+    font-size: 80%;
+  }
+}
+
+#meText{
+  font-family: 'Mulish', sans-serif;
+}
+
+/* pages */
+
+#specialLink3{
+  font-size: 150%;
+  color: #2d6a4f;
+  font-family: 'Mulish', sans-serif;
+}
+
+/* films page */
+
+@media screen and (min-width: 601px) {
+  #videoPlayer {
+    width: 70%;
+    height: 300%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #videoPlayer {
+    width: 100%;
+    height: 150%;
+  }
+}
