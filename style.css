@@ -144,6 +144,10 @@ html, body {
     height: 50px;
     width: auto;
   }
+  #frame{
+    width: 600px;
+    height: 400px;
+  }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 601px) {
@@ -218,6 +222,10 @@ html, body {
     height: 50px;
     width: auto;
   }
+  #frame{
+    width: 600px;
+    height: 400px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -280,6 +288,10 @@ html, body {
   #watermark{
     width: 100px;
     height: auto;
+  }
+  #frame{
+    width: 270px;
+    height: 195px;
   }
 }
 
