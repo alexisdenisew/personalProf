@@ -1,305 +1,154 @@
-html, body {
-  height: 100%;
-  width: 100%;
-  
-}
-
-
-
-/* #bod {
-  background-color: #ffe3e0;
-} */
-
-#barName{
-  font-family: 'Alata', sans-serif;
-  color: #ffe3e0;
-}
-
-#name, #smallerTit{
-  color: #e27396; 
-  font-family: 'Alata', sans-serif;
-}
-
-#smallerTit{
-  color: #ea9ab2; 
-  font-family: 'Alata', sans-serif;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
 }
 
 #center{
   text-align: center;
 }
 
-#mainTxt, #specialBox, .mainLink, .specialLink, .dropdown-item{
+.navbar {
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.left-nav a {
   font-family: 'Poppins', sans-serif;
-/*   color: #f38375; */
-}
-
-#linkStyle, .pink{
-  color: #ea9ab2;
-}
-
-.pink2{
-  color: white;
-}
-
-.specialLink:hover{
-  color: #e27396;
-}
-
-.specialLink{
-  color: black;
+  color: #101010;
   text-decoration: none;
+  margin-right: 20px;
 }
 
-.nav-link{
+#info{
+  margin-top: 30px;
+  margin-left: 1%;
+}
+
+.right-nav {
+  color: #101010;
+}
+
+.content {
   font-family: 'Poppins', sans-serif;
+  text-align: left;
+  max-width: 100%;
+  /* margin: 0 auto; */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.mainLink{
-    color: #ea9ab2;
-  }
-
-.mainLink:hover{
-  color: #efcfe3;
+.content a {
+  color: #101010; /* Set link color to black */
 }
 
-@keyframes fadeColor {
-  from {color: #ea9ab2;}
-  to {color: white;}
+.title {
+  font-size: 1.5em;
+  font-family: 'Alata', sans-serif;
+  text-decoration: none; /* Remove underline */
+  color: #101010;
 }
 
-.pink2{
-  animation-name: fadeColor;
-  animation-duration: 15s;
+.navbar a{
+  text-decoration: none; /* Remove underline */
+  color: #101010;
 }
 
-@media screen and (min-width: 1001px) {
-  #center{
-    margin: 7%;
-    margin-left:15%;
-    margin-right:15%;
-  }
-  #bigPic{
-    width: 60%;
-    height: auto;
-  }
-  #name{
-    font-size: 550%;
-    margin-bottom: 3%;
-  }
-  #mainTxt{
-    font-size: 115%;
-  }
-  #leftAlign{
-    margin: 5%;
-    margin-left:15%;
-    margin-right:15%;
-  }
-  #spacer{
-    height: 200px;
-    width: auto;
-  }
-  #spacerMini{
-    height: 50px;
-    width: auto;
-  }
-  #specialSpace{
-    height: 100px;
-    width: auto;
-  }
-  #marginBox{
-    margin: 3%;
-  }
-  #bannerIMG{
-    width: 90%;
-    height: auto;
-  }
-  .mainLink{
-    font-size: 150%;
-  }
-  .specialLink{
-    font-size: 120%;
-  }
-  #ytPlayer{
-    width: 600px;
-    height: 355px;
-  }
-  #smallerTit{
-    font-size: 300%;
-    margin-bottom: 3%;
-  }
-  .writingPDF{
-    width: 800px;
-    height: 800px;
-  }
-  #watermark{
-    width: 170px;
-    height: auto;
-  }
-  #spacerXMini{
-    height: 5px;
-    width: auto;
-  }
-  #spacerMinier{
-    height: 50px;
-    width: auto;
-  }
-  #frame{
-    width: 600px;
-    height: 400px;
-  }
-}
-
-@media screen and (max-width: 1000px) and (min-width: 601px) {
-  #center{
-  margin: 7%;
-  }
-  #bigPic{
-    width: 55%;
-    height: auto;
-  }
-  #name{
-    font-size: 400%;
-    margin-top: 5%;
-    margin-bottom: 3%;
-  }
-  #mainTxt{
-    font-size: 115%;
-  }
-  #leftAlign{
-    margin: 5%;
-  }
-  #spacer{
-    height: 200px;
-    width: auto;
-  }
-  #spacerMini{
-    height:70px;
-    width: auto;
-  }
-  #spacerMinier{
-    height: 40px;
-    width: auto;
-  }
-  #specialSpace{
-    height: 100px;
-    width: auto;
-  }
-  #marginBox{
-    margin: 3%;
-  }
-  #bannerIMG{
-    width: 90%;
-    height: auto;
-  }
-  .mainLink{
-    font-size: 150%;
-  }
-  .specialLink{
-    font-size: 120%;
-  }
-  #ytPlayer{
-    width: 560px;
-    height: 315px;
-  }
-  #smallerTit{
-    font-size: 270%;
-    margin-bottom: 3%;
-  }
-  .writingPDF{
-    width: 500px;
-    height: 680px;
-  }
-  #watermark{
-    width: 170px;
-    height: auto;
-  }
-  #spacerXMini{
-    height: 5px;
-    width: auto;
-  }
-  #spacerMinier{
-    height: 50px;
-    width: auto;
-  }
-  #frame{
-    width: 600px;
-    height: 400px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #center{
-  margin: 8%;
-  }
-  #bigPic{
-    width: 80%;
-    height: auto;
-    margin-top: 5%;
-  }
-  #name{
-    font-size: 270%;
-    margin-top: 8%;
-    margin-bottom: 8%;
-  }
-  #mainTxt{
-    font-size: 90%;
-  }
-  #leftAlign{
-    margin: 5%;
-  }
-  #spacer{
-    height: 200px;
-    width: auto;
-  }
-  #specialSpace{
-    height: 100px;
-    width: auto;
-  }
-  #spacerMini{
-    height: 30px;
-    width: auto;
-  }
-  #marginBox{
-    margin: 3%;
-  }
-  #bannerIMG{
-    width: 100%;
-    height: auto;
-  }
-  .mainLink{
-    font-size: 130%;
-  }
-  .specialLink{
-    font-size: 120%;
-  }
-  #ytPlayer{
-    width: 320px;
-    height: 190px;
-  }
-  #smallerTit{
-    font-size: 120%;
-    margin-bottom: 10%;
-  }
-  #spacerMinier{
-    height: 50px;
-    width: auto;
-  }
-  #watermark{
-    width: 100px;
-    height: auto;
-  }
-  #frame{
-    width: 270px;
-    height: 195px;
-  }
-}
-
-/* about page */
-
-#specialBox{
-  border-style: double;
-  border-color: #e27396;
+#push{
+  margin-left: 10px;
 }
 
 
+@media screen and (min-width: 951px) {
+  .helper{
+    margin-top: 200px;
+  }
+}
+
+@media screen and (max-width: 950) and (min-width: 800px)  {
+  .helper{
+    margin-top: 150px;
+  }
+}
+
+.main-image {
+  width: 100%;
+  max-height: 70vh;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.middleImg{
+  width: 95%;
+  height: auto;
+  max-width: 850px;
+}
+
+.smallerImg{
+  width: 95%;
+  height: auto;
+  max-width: 600px;
+}
+
+.video-container {
+  position: relative;
+  width: 80%; /* Adjust this value to make the video container smaller or larger */
+  max-width: 800px; /* Set a maximum width if needed */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width) */
+  height: 0;
+  overflow: hidden;
+}
+
+#ytPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.contact {
+  text-align: left;
+}
+
+.social {
+  text-align: left;
+}
+
+.row{
+  margin-bottom: 5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#holder{
+  margin-left: 5%;
+  margin-right: 5%;
+}
