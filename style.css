@@ -152,3 +152,30 @@ body {
   margin-left: 5%;
   margin-right: 5%;
 }
+
+@keyframes fader {
+  from {border: 1px solid #f3f3f3;}
+  to {border: 3px solid #ff0086;;}
+}
+
+
+.round-button {
+  display: block; /* Display buttons as block elements */
+  width: 65%; /* Set a fixed width for the buttons */
+  padding: 10px 20px;
+  margin: 10px auto; /* Center buttons horizontally */
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  color: #101010;
+  text-decoration: none;
+  animation-name: fader;
+  animation-duration: 3s;
+  border: 3px solid #ff0086;
+}
+
+/* Change button color on hover */
+.round-button:hover {
+  background-color: #ff0086;
+}
+
+
