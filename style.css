@@ -155,7 +155,7 @@ body {
 
 @keyframes fader {
   from {border: 1px solid #f3f3f3;}
-  to {border: 3px solid #ff0086;;}
+  to {border: 3px solid #5f3623;}
 }
 
 
@@ -170,12 +170,12 @@ body {
   text-decoration: none;
   animation-name: fader;
   animation-duration: 3s;
-  border: 3px solid #ff0086;
+  border: 3px solid #5f3623;
 }
 
 /* Change button color on hover */
 .round-button:hover {
-  background-color: #ff0086;
-} 
+  background-color: #5f3623;
+}
 
 
