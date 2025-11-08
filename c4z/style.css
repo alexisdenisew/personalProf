@@ -577,36 +577,37 @@ font-family: "Domine", serif;
   
 
 
+
   /* ===========================================
-   MOBILE TYPOGRAPHY FIX
-   Make text + headings larger on small screens
+   MOBILE TYPOGRAPHY FIX (px + % only)
+   Make text larger on mobile devices
 =========================================== */
 @media (max-width: 700px) {
 
     /* main page title */
     .title {
-      font-size: clamp(2.2rem, 10vw, 3.2rem) !important;
+      font-size: 36px !important;
     }
   
-    /* section titles */
+    /* section headers like "About Us" */
     .subTitle {
-      font-size: clamp(1.6rem, 8vw, 2.4rem) !important;
+      font-size: 28px !important;
     }
   
-    /* bios names */
+    /* bio names (Aidan, Alexis) */
     #subSubTitle {
-      font-size: clamp(1.4rem, 6.8vw, 2rem) !important;
+      font-size: 22px !important;
     }
   
-    /* body text + list items */
+    /* body text */
     p, ol, li {
-      font-size: clamp(1.05rem, 4.8vw, 1.25rem) !important;
-      line-height: 1.55 !important;
+      font-size: 18px !important;
+      line-height: 150% !important;
     }
   
-    /* figure captions under creator circles */
+    /* captions under images */
     .person figcaption {
-      font-size: clamp(0.9rem, 4.4vw, 1.1rem) !important;
+      font-size: 16px !important;
     }
   }
   
