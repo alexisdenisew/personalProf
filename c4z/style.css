@@ -1,3 +1,4 @@
+
 /* GENERAL STUFF */
 
 body{
@@ -451,126 +452,59 @@ font-family: "Domine", serif;
 
 
   /* ===========================
-  STRONG MOBILE HERO FIX (paste at end of style.css)
-  - Forces mobile-safe behavior
-  - Two-step approach: preferred "cover, top focus" + robust fallback
+  MOBILE-FRIENDLY HERO OVERRIDE
+  (paste at the very end of style.css)
 =========================== */
 
-/* 1) Preferred mobile fix: disable fixed-attachment, show top/center, reduce height */
+/* Keep desktop parallax, but make mobile safe */
 @media (max-width: 992px) {
-    /* high-specificity selector to beat other rules */
-    html body .hero-parallax,
     .hero-parallax {
-      background-attachment: scroll !important;       /* stop buggy fixed behavior */
-      background-position: 50% 20% !important;       /* shift crop toward upper center (adjust % if needed) */
-      background-size: cover !important;             /* keep good fill while preventing extreme zoom */
-      height: 44vh !important;                        /* shorter hero to avoid huge scaling */
-      min-height: 300px !important;
-      max-height: 58vh !important;
-      overflow: hidden !important;
-      -webkit-backface-visibility: hidden !important;
-      backface-visibility: hidden !important;
+      /* Avoid mobile zoom/cropping by disabling fixed attachment */
+      background-attachment: scroll !important;
+  
+      /* Show more of the top area (adjust if you want left/right) */
+      background-position: center top !important;
+  
+      /* Give the hero less vertical height on smaller screens */
+      height: 45vh !important;
+      min-height: 320px !important;
+      max-height: 60vh !important;
     }
   
-    /* strengthen overlay so text remains readable */
-    html body .hero-parallax::after,
+    /* Make overlay slightly stronger on mobile so text stays readable */
     .hero-parallax::after {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.62)) !important;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.65)) !important;
     }
   
-    /* shrink and pad inner content */
-    html body .hero-content,
+    /* Make inner hero content scale so it doesn't overflow / look huge */
     .hero-content {
-      padding-left: 18px !important;
-      padding-right: 18px !important;
+      padding: 0 18px !important;
+      width: 100% !important;
       box-sizing: border-box !important;
     }
   
-    /* reduce title scale on small viewports */
-    html body .title,
+    /* If your title gets too big on mobile, scale it down a bit */
     .title {
-      font-size: clamp(1.8rem, 6vw, 2.8rem) !important;
-      line-height: 1.08 !important;
+      font-size: clamp(2rem, 6vw, 3.2rem) !important;
+      line-height: 1.05 !important;
     }
-  }
   
-  /* 2) Fallback mode — if the cover approach still appears zoomed on certain UAs,
-     switch to "contain" so the full image is visible (no cropping). This produces
-     letterboxing but prevents the huge zoom/crop problem. Toggle by enabling this
-     block if needed (it's intentionally lower priority so it won't usually run). */
-  @media (max-width: 420px) {
-    html body .hero-parallax,
-    .hero-parallax {
-      /* Use contain to guarantee full-image visibility on tiny viewports.
-         Uncomment the next line if you prefer seeing the whole image (with possible bars) */
-      /* background-size: contain !important; */
-  
-      /* If you enable contain you may want a darker background behind it to avoid white bars */
-      /* background-color: #000 !important; */
-    }
-  }
-  
-  /* 3) If your HTML ever switches to <img> inside the hero (recommended fallback),
-     the following ensures the <img> behaves responsively: */
-  @media (max-width: 992px) {
-    .hero-parallax img,
-    .hero img {
+    .hero-parallax img {
+      /* if you ever swap to an <img> based hero, keep it responsive */
       width: 100% !important;
       height: auto !important;
       object-fit: cover !important;
-      object-position: 50% 20% !important;
-      display: block !important;
+      object-position: center top !important;
     }
   }
   
-  /* Extra debug helper (temporary): if you still see the zoomed image after the above,
-     add a red outline to the hero so you can confirm which element is being rendered. */
-  /*
-  .hero-parallax {
-    outline: 3px dashed rgba(255,0,0,0.45) !important;
-  }
-  */
-  
-
-  /* ---------- HERO DEBUG HELPERS (paste at end of file) ---------- */
-/* Add .hero-debug to body to enable debugging visuals and safe fallbacks */
-
-.hero-debug .hero-parallax {
-    outline: 3px dashed rgba(255, 0, 0, 0.6) !important; /* shows the element boundary */
-    background-position: 50% 10% !important;            /* shift focus upward for mobile */
-    background-size: cover !important;                  /* ensure normal cover mode */
-    background-attachment: scroll !important;           /* force scroll on mobile UAs */
-    transition: background-position .2s linear !important;
+  /* Extra: if you want the hero to always use the top of the image on tiny phones */
+  @media (max-width: 420px) {
+    .hero-parallax {
+      background-position: center 18% !important; /* nudges the crop slightly down */
+      height: 42vh !important;
+      min-height: 300px !important;
+    }
   }
   
-  /* Quick test: try showing the whole image (no crop). Use this to compare */
-  .hero-debug .hero-parallax.test-contain {
-    background-size: contain !important;       /* shows full image (letterboxed) */
-    background-repeat: no-repeat !important;
-    background-position: 50% 20% !important;
-    background-color: #000 !important;         /* hides any white bars */
-  }
-  
-  /* If you decide to temporarily use an <img> fallback inside hero, make sure it behaves responsively */
-  .hero-parallax img {
-    width: 100% !important;
-    height: auto !important;
-    object-fit: cover !important;
-    object-position: 50% 20% !important;
-    display: block !important;
-  }
-  
-  /* Debug helper to show computed box size (optional) */
-  .hero-debug .hero-parallax::before{
-    content: "HERO DBG";
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    font-size: 12px;
-    background: rgba(0,0,0,0.45);
-    color: #fff;
-    padding: 4px 6px;
-    border-radius: 4px;
-    z-index: 9999;
-  }
   
