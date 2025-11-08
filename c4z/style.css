@@ -532,4 +532,46 @@ font-family: "Domine", serif;
   }
   */
   
+
+  /* ---------- HERO DEBUG HELPERS (paste at end of file) ---------- */
+/* Add .hero-debug to body to enable debugging visuals and safe fallbacks */
+
+.hero-debug .hero-parallax {
+    outline: 3px dashed rgba(255, 0, 0, 0.6) !important; /* shows the element boundary */
+    background-position: 50% 10% !important;            /* shift focus upward for mobile */
+    background-size: cover !important;                  /* ensure normal cover mode */
+    background-attachment: scroll !important;           /* force scroll on mobile UAs */
+    transition: background-position .2s linear !important;
+  }
+  
+  /* Quick test: try showing the whole image (no crop). Use this to compare */
+  .hero-debug .hero-parallax.test-contain {
+    background-size: contain !important;       /* shows full image (letterboxed) */
+    background-repeat: no-repeat !important;
+    background-position: 50% 20% !important;
+    background-color: #000 !important;         /* hides any white bars */
+  }
+  
+  /* If you decide to temporarily use an <img> fallback inside hero, make sure it behaves responsively */
+  .hero-parallax img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    object-position: 50% 20% !important;
+    display: block !important;
+  }
+  
+  /* Debug helper to show computed box size (optional) */
+  .hero-debug .hero-parallax::before{
+    content: "HERO DBG";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    padding: 4px 6px;
+    border-radius: 4px;
+    z-index: 9999;
+  }
   
