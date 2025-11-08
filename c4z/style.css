@@ -448,4 +448,63 @@ font-family: "Domine", serif;
       gap: 40px;
     }
   }
+
+
+
+  /* ===========================
+  MOBILE-FRIENDLY HERO OVERRIDE
+  (paste at the very end of style.css)
+=========================== */
+
+/* Keep desktop parallax, but make mobile safe */
+@media (max-width: 992px) {
+    .hero-parallax {
+      /* Avoid mobile zoom/cropping by disabling fixed attachment */
+      background-attachment: scroll !important;
+  
+      /* Show more of the top area (adjust if you want left/right) */
+      background-position: center top !important;
+  
+      /* Give the hero less vertical height on smaller screens */
+      height: 45vh !important;
+      min-height: 320px !important;
+      max-height: 60vh !important;
+    }
+  
+    /* Make overlay slightly stronger on mobile so text stays readable */
+    .hero-parallax::after {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.65)) !important;
+    }
+  
+    /* Make inner hero content scale so it doesn't overflow / look huge */
+    .hero-content {
+      padding: 0 18px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+  
+    /* If your title gets too big on mobile, scale it down a bit */
+    .title {
+      font-size: clamp(2rem, 6vw, 3.2rem) !important;
+      line-height: 1.05 !important;
+    }
+  
+    .hero-parallax img {
+      /* if you ever swap to an <img> based hero, keep it responsive */
+      width: 100% !important;
+      height: auto !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+    }
+  }
+  
+  /* Extra: if you want the hero to always use the top of the image on tiny phones */
+  @media (max-width: 420px) {
+    .hero-parallax {
+      background-position: center 18% !important; /* nudges the crop slightly down */
+      height: 42vh !important;
+      min-height: 300px !important;
+    }
+  }
+  
   
