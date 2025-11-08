@@ -1,577 +1,239 @@
+/* =========================================================
+   CLEAN, CONSOLIDATED style.css
+   - Drop-in replacement. Paste entire content into style.css
+   - Designed for: hero split (image + text), About bios,
+     people-row (inline circular), ig-row (horizontal embeds)
+   - Mobile-friendly, subtle animations, hidden scrollbars
+   ========================================================= */
 
-/* GENERAL STUFF */
-
-body{
-    background-color: #2719d1;
+/* ------------------------
+   Global reset / base
+   ------------------------ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #0f1724;
+  background: #fafafa;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-#content{
-    margin: 5%;
+/* Standard container spacing used in page */
+#content { max-width: 1200px; margin: 0 auto; padding: 28px; }
+
+/* ------------------------
+   Typography
+   ------------------------ */
+.title { font-size: clamp(2rem, 6vw, 3.6rem); font-weight:800; text-align:center; margin-bottom:6px; }
+.subTitle { font-size: clamp(1.4rem, 3.2vw, 2rem); font-weight:700; text-align:center; margin:18px auto 8px; display:block; position:relative; }
+.subTitle::after {
+  content:""; display:block; height:4px; width:0; margin:8px auto 0; background:linear-gradient(90deg,#ff007a,#6a2bff);
+  border-radius:4px; animation:growUnderline .9s .25s ease forwards;
+}
+@keyframes growUnderline { to{ width: 70%; } }
+
+p, li, ol { color: #1f2937; font-size: clamp(1rem, 2.2vw, 1.06rem); max-width: 900px; margin: 14px auto; }
+
+/* ------------------------
+   HERO — Split screen (image + text) — responsive
+   ------------------------ */
+.hero {
+  display:flex;
+  width:100%;
+  min-height: 56vh;
+  height: 72vh;
+  background: #000;
+  overflow: hidden;
+  align-items: stretch;
 }
 
-#center{
-    text-align: center;
+/* left: image area - uses <img> or background depending on your HTML */
+.hero .hero-image,
+.hero img {
+  flex: 1 1 50%;
+  min-width: 40%;
+  height:100%;
+  object-fit: cover;
+  object-position: center center;
+  display:block;
 }
 
-.title{
-    padding: 10px;
-    font-family: "Domine", serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 550%;
-    color: #ffab00;
-    text-shadow: -3px 3px #e91801;
+/* right: text area */
+.hero .hero-text {
+  flex: 1 1 50%;
+  padding: clamp(24px, 6vw, 80px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  color:#fff;
+  background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.18));
 }
 
-.subTitle{
-    margin-top: 5%;
-    margin-bottom: 2%;
-    font-family: "Staatliches", sans-serif;
-    font-weight: 550;
-    font-style: normal;
-    color: #ffab00;
-    font-size: 450%;
+/* hero text sizes */
+.hero-text h1 { font-size: clamp(2rem, 4.5vw, 3.8rem); margin-bottom:8px; line-height:1.02; }
+.hero-text p { font-size: clamp(1.05rem, 2.2vw, 1.3rem); max-width:520px; }
+
+/* subtle hero animations */
+.hero-text { opacity:0; transform:translateX(20px); animation:heroTextIn .9s .25s ease forwards; }
+@keyframes heroTextIn { to { opacity:1; transform:none; } }
+
+/* mobile collapse: stack, reduce height and center text */
+@media (max-width: 860px) {
+  .hero { flex-direction: column; height: auto; min-height: 44vh; }
+  .hero .hero-image, .hero img { height: 40vh; width:100%; }
+  .hero .hero-text { padding: 18px 20px; text-align:center; }
 }
 
-
-
-p, .person{
-    font-family: "Spectral", serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #f9f9f9;
-    font-size: 150%;
-    margin-bottom: 15%;
-}
-
-ol{
-    font-family: "Spectral", serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #f9f9f9;
-    font-size: 60%;
-    padding: 2px;
-}
-
-#subSubTitle{
-font-family: "Domine", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 300%;
-  margin-bottom: 5%;
-  margin-top: 5%;
-  color: #f9f9f9;
-}
-
-
-/* SPLASH PIC */
-
-
-.hero-parallax {
-    height: 75vh;
-    width: 100%;
-    background-image: url("assets/photos/splash.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* <-- parallax effect */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
-  }
-  
-  /* subtle gradient overlay to improve readability */
-  .hero-parallax::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    animation: fadeUp 1.2s ease-out forwards;
-    opacity: 0;
-  }
-  
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-
-
-
-
-
-
-
-/* FEATURING CREATORS */
-
-/* --- HORIZONTAL SCROLL ROW --- */
-.people-row {
-  display: flex;
-  flex-direction: row;
-  gap: 32px;
-  overflow-x: auto;
-  padding: 12px 4px;
-  white-space: nowrap;
+/* ------------------------
+   ABOUT / BIOS (two columns on desktop, stacked on mobile)
+   ------------------------ */
+.bio-row {
+  display:flex;
+  gap: 48px;
+  justify-content:center;
+  margin-top: 28px;
   flex-wrap: nowrap;
-  scroll-snap-type: x mandatory;
+  overflow-x:auto;               /* allows horizontal scroll if viewport too narrow */
   -webkit-overflow-scrolling: touch;
-
-  /* invisible scrollbar */
-  scrollbar-width: none;      /* Firefox */
-  -ms-overflow-style: none;   /* IE/Edge */
+  scrollbar-width: none;
 }
-.people-row::-webkit-scrollbar {
-  display: none;              /* Chrome/Safari */
+.bio-row::-webkit-scrollbar { display:none; }
+
+.bio {
+  flex: 0 0 420px;
+  max-width: 420px;
+  text-align: center;
+  padding: 12px;
+  box-sizing: border-box;
 }
 
-/* --- PERSON CARD --- */
+/* circular bio photos */
+.bio img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  display:block;
+  margin: 14px auto;
+  box-shadow: 0 12px 36px rgba(2,6,23,0.12);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+.bio img:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 18px 44px rgba(2,6,23,0.18); }
+
+/* bio name */
+.bio h3 { margin-top:6px; font-size:1.25rem; font-weight:700; }
+
+/* mobile for bios: stack and center, shrink photos */
+@media (max-width: 760px) {
+  .bio-row { flex-direction: column; gap: 28px; align-items:center; }
+  .bio { max-width: 90vw; flex: 0 0 90vw; }
+  .bio img { width: 180px; height: 180px; }
+}
+
+/* ------------------------
+   PEOPLE MINI ROW (small circular photos in-line)
+   If your page uses .people-row and .person — these are compact cards.
+   ------------------------ */
+.people-row {
+  display:flex;
+  gap: 20px;
+  align-items:center;
+  overflow-x:auto;
+  padding: 8px 6px;
+  scrollbar-width: none;
+}
+.people-row::-webkit-scrollbar{ display:none; }
+
 .person {
   flex: 0 0 auto;
-  scroll-snap-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  width: 310px;                  /* bigger card width */
-  transform: translateY(14px) scale(.97);
-  opacity: 0;
-  transition: transform .45s cubic-bezier(.2,.9,.3,1), opacity .45s ease;
+  width: 160px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  text-align:center;
 }
-
-/* visible = animated in */
-.person.visible {
-  transform: none;
-  opacity: 1;
-}
-
-/* --- BIGGER CIRCULAR IMAGE --- */
 .person img {
-  width: 270px;                 /* increase size */
-  height: 270px;                /* increase size */
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  display: block;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.15);
-  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 10px 28px rgba(2,6,23,0.10);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.person:hover img { transform: translateY(-4px) scale(1.05); box-shadow: 0 18px 40px rgba(2,6,23,0.18); }
+
+/* smaller on very small screens */
+@media (max-width:480px) {
+  .person { width: 120px; }
+  .person img { width: 100px; height:100px; }
 }
 
-/* hover + focus micro animation */
-.person:hover img,
-.person:focus img {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.22);
+/* ------------------------
+   HORIZONTAL EMBED ROW (Instagram / TikTok cards)
+   ------------------------ */
+.ig-row,
+.video-row {
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  padding:12px 4px;
+  white-space:nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.ig-row::-webkit-scrollbar, .video-row::-webkit-scrollbar { display:none; }
+
+/* card that contains an embed */
+.ig-card, .video-card {
+  flex: 0 0 380px;
+  width: 380px;
+  min-width: 360px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 10px 28px rgba(2,6,23,0.06);
+  scroll-snap-align: center;
+  box-sizing: border-box;
 }
 
-/* caption under each circle */
-.person figcaption {
-  text-align: center;
+/* ensure any inserted iframes, or IG blockquotes fill the card */
+.ig-card iframe, .ig-card blockquote.instagram-media,
+.video-card iframe, .video-card blockquote.instagram-media {
+  width:100% !important;
+  height: 520px !important;
+  border-radius: 8px;
+  display:block !important;
 }
 
-/* small pulse animation */
-.person.pulse img {
-  animation: person-pulse .7s ease;
-}
-@keyframes person-pulse {
-  0% { transform: scale(1); }
-  40% { transform: scale(1.08); }
-  100% { transform: scale(1); }
+/* mobile embed cards: occupy most of viewport */
+@media (max-width:720px) {
+  .ig-card, .video-card { flex: 0 0 92%; width: 92%; min-width: 92%; }
+  .ig-card iframe, .video-card iframe { height: 62vh !important; }
 }
 
-/* responsive: smaller images on narrow screens */
-@media (max-width: 480px) {
-  .person {
-    width: 140px;
-  }
-  .person img {
-    width: 120px;
-    height: 120px;
-  }
+/* ------------------------
+   Utility buttons and small helpers
+   ------------------------ */
+button, .btn {
+  background: #0f1724; color:#fff; padding:10px 16px; border-radius:8px; border:0; cursor:pointer; font-weight:600;
+}
+button:hover, .btn:hover { transform: translateY(-3px); transition: all .18s ease; }
+
+/* small fade-up animation used by various small widgets */
+.fade-up { opacity:0; transform: translateY(18px); animation:fadeUp 0.9s ease forwards; }
+@keyframes fadeUp { to { opacity:1; transform:none; } }
+
+/* ------------------------
+   Final small responsive, accessibility & focus tweaks
+   ------------------------ */
+:focus { outline: none; }
+a:focus, button:focus, .person:focus, .bio:focus { box-shadow: 0 0 0 4px rgba(99,102,241,0.11); border-radius:8px; }
+
+@media (max-width:480px){
+  #content { padding: 18px; }
+  p, ol, li { font-size: 1rem; }
 }
 
-
-  
-
-
-
-
-
-/* ACTIVATIONS SECTION */
-
-/* ===========================
-   GLOBAL RESET
-   (paste entire file, replacing old style.css)
-=========================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* ===========================
-     ROW SELECTORS (supports both .video-row and .ig-row)
-  =========================== */
-  /* Target both naming conventions so it works no matter which class you used */
-  .video-row,
-  .ig-row {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 16px !important;
-    overflow-x: auto !important;
-    padding: 16px !important;
-    width: 100% !important;
-    scroll-snap-type: x mandatory !important;
-    flex-wrap: nowrap !important;
-    white-space: nowrap !important;
-    -webkit-overflow-scrolling: touch !important;
-    align-items: flex-start !important;
-  
-    /* Hide scrollbars visually but keep scrolling functional */
-    scrollbar-width: none;     /* Firefox */
-    -ms-overflow-style: none;  /* IE/Edge */
-  }
-  .video-row::-webkit-scrollbar,
-  .ig-row::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
-  }
-  
-  /* ===========================
-     CARD SELECTORS (supports both .video-card and .ig-card)
-  =========================== */
-  .video-card,
-  .ig-card {
-    flex: 0 0 380px !important;     /* width of each card */
-    scroll-snap-align: center !important;
-    background: #ffab00 !important;
-    border-radius: 12px !important;
-    padding: 20px !important;
-    min-height: 560px !important;   /* prevents vertical squishing */
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
-
-    display: flex !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    overflow: hidden !important;
-    position: relative !important;
-  
-    /* subtle enter animation */
-    opacity: 0 !important;
-    transform: translateY(12px) !important;
-    transition: opacity .45s ease, transform .45s ease !important;
-  }
-  .video-card.visible,
-  .ig-card.visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-  
-  /* ===========================
-     EMBED / IFRAME FIXES (force sizing so instagram embed doesn't overflow)
-     Covers instagram blockquote, potential iframe, and tiktok embed class
-  =========================== */
-  .video-card iframe,
-  .ig-card iframe,
-  .video-card blockquote.instagram-media,
-  .ig-card blockquote.instagram-media,
-  .video-card .tiktok-embed,
-  .ig-card .tiktok-embed {
-    width: 50% !important;
-    height: 650px !important;      /* increase if you want taller cards */
-    border-radius: 8px !important;
-    display: block !important;
-    box-sizing: border-box !important;
-  }
-  
-  /* Remove forced padding fallback inside blockquotes (prevents a squashed fallback box) */
-  .video-card blockquote.instagram-media > div,
-  .ig-card blockquote.instagram-media > div {
-    padding: 0 !important;
-  }
-  
-  /* ===========================
-     RESPONSIVE
-  =========================== */
-  @media (max-width: 480px) {
-    .video-card,
-    .ig-card {
-      flex: 0 0 90vw !important;
-      min-height: 60vh !important;
-    }
-  
-    .video-card iframe,
-    .ig-card iframe,
-    .video-card blockquote.instagram-media,
-    .ig-card blockquote.instagram-media {
-      height: 60vh !important;
-    }
-  }
-  
-  /* ===========================
-     Small niceties: scroll indicator and focus state
-  =========================== */
-  .video-row:focus,
-  .ig-row:focus {
-    outline: none;
-  }
-  
-  /* optional: make focused card show a soft outline for accessibility */
-  .video-card:focus,
-  .ig-card:focus {
-    box-shadow: 0 6px 24px rgba(21, 101, 192, 0.12), 0 0 0 3px rgba(21,101,192,0.06) !important;
-    outline: none !important;
-  }
-
-
-  /* ABOUT US SECTION */
-  
-  /* ---------------------------
-   SECTION TITLE ANIMATION
----------------------------- */
-.subTitle {
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
-    position: relative;
-    display: inline-block;
-    animation: fadeSlideUp 0.8s ease-out forwards;
-    opacity: 0;
-  }
-  
-  .subTitle::after {
-    content: "";
-    width: 0%;
-    height: 4px;
-    background: linear-gradient(90deg, #e91801, #2719d1);
-    display: block;
-    margin: 8px auto 0;
-    border-radius: 3px;
-    animation: expandLine 1s 0.5s ease-out forwards;
-  }
-  
-  /* animations */
-  @keyframes fadeSlideUp {
-    from { transform: translateY(24px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-  
-  @keyframes expandLine {
-    from { width: 0%; }
-    to { width: 90%; }
-  }
-  
-  /* ---------------------------
-     BODY TEXT STYLING
-  ---------------------------- */
-  p, ol {
-    line-height: 1.6;
-    max-width: 900px;
-    margin: auto;
-  }
-  
-  /* ---------------------------
-     BIOS LAYOUT + ANIMATION
-  ---------------------------- */
-  .bio-row {
-    display: flex;
-    gap: 60px;
-    justify-content: center;
-    margin-top: 36px;
-    flex-wrap: nowrap;
-  }
-  
-  /* individual bio column */
-  .bio {
-    flex: 1;
-    max-width: 420px;
-    text-align: center;
-  
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s ease-out forwards;
-  }
-  
-  /* staggers animation timing */
-  .bio:nth-child(2) {
-    animation-delay: 0.3s;
-  }
-  
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  /* ---------------------------
-     BIO IMAGES — circular + hover
-  ---------------------------- */
-  .bio img {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin: 14px auto;
-    display: block;
-  
-    /* aesthetics */
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.18);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-  }
-  
-  /* hover effect */
-  .bio img:hover {
-    transform: scale(1.08);
-    box-shadow: 0px 14px 40px rgba(0,0,0,0.28);
-  }
-  
-  
-  /* ---------------------------
-     NAME UNDER PHOTOS
-  ---------------------------- */
-  #subSubTitle {
-    margin-bottom: 8px;
-    font-weight: 700;
-  }
-  
-  /* ---------------------------
-     RESPONSIVE — stack on mobile
-  ---------------------------- */
-  @media (max-width: 800px) {
-    .bio-row {
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-    }
-  }
-
-
-
-  /* ===========================
-  STRONG MOBILE HERO FIX (paste at end of style.css)
-  - Forces mobile-safe behavior
-  - Two-step approach: preferred "cover, top focus" + robust fallback
-=========================== */
-
-/* 1) Preferred mobile fix: disable fixed-attachment, show top/center, reduce height */
-@media (max-width: 992px) {
-    /* high-specificity selector to beat other rules */
-    html body .hero-parallax,
-    .hero-parallax {
-      background-attachment: scroll !important;       /* stop buggy fixed behavior */
-      background-position: 50% 20% !important;       /* shift crop toward upper center (adjust % if needed) */
-      background-size: cover !important;             /* keep good fill while preventing extreme zoom */
-      height: 44vh !important;                        /* shorter hero to avoid huge scaling */
-      min-height: 300px !important;
-      max-height: 58vh !important;
-      overflow: hidden !important;
-      -webkit-backface-visibility: hidden !important;
-      backface-visibility: hidden !important;
-    }
-  
-    /* strengthen overlay so text remains readable */
-    html body .hero-parallax::after,
-    .hero-parallax::after {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.62)) !important;
-    }
-  
-    /* shrink and pad inner content */
-    html body .hero-content,
-    .hero-content {
-      padding-left: 18px !important;
-      padding-right: 18px !important;
-      box-sizing: border-box !important;
-    }
-  
-    /* reduce title scale on small viewports */
-    html body .title,
-    .title {
-      font-size: clamp(1.8rem, 6vw, 2.8rem) !important;
-      line-height: 1.08 !important;
-    }
-  }
-  
-  /* 2) Fallback mode — if the cover approach still appears zoomed on certain UAs,
-     switch to "contain" so the full image is visible (no cropping). This produces
-     letterboxing but prevents the huge zoom/crop problem. Toggle by enabling this
-     block if needed (it's intentionally lower priority so it won't usually run). */
-  @media (max-width: 420px) {
-    html body .hero-parallax,
-    .hero-parallax {
-      /* Use contain to guarantee full-image visibility on tiny viewports.
-         Uncomment the next line if you prefer seeing the whole image (with possible bars) */
-      /* background-size: contain !important; */
-  
-      /* If you enable contain you may want a darker background behind it to avoid white bars */
-      /* background-color: #000 !important; */
-    }
-  }
-  
-  /* 3) If your HTML ever switches to <img> inside the hero (recommended fallback),
-     the following ensures the <img> behaves responsively: */
-  @media (max-width: 992px) {
-    .hero-parallax img,
-    .hero img {
-      width: 100% !important;
-      height: auto !important;
-      object-fit: cover !important;
-      object-position: 50% 20% !important;
-      display: block !important;
-    }
-  }
-  
-  /* Extra debug helper (temporary): if you still see the zoomed image after the above,
-     add a red outline to the hero so you can confirm which element is being rendered. */
-  /*
-  .hero-parallax {
-    outline: 3px dashed rgba(255,0,0,0.45) !important;
-  }
-  */
-  
-
-  /* ---------- HERO DEBUG HELPERS (paste at end of file) ---------- */
-/* Add .hero-debug to body to enable debugging visuals and safe fallbacks */
-
-.hero-debug .hero-parallax {
-    outline: 3px dashed rgba(255, 0, 0, 0.6) !important; /* shows the element boundary */
-    background-position: 50% 10% !important;            /* shift focus upward for mobile */
-    background-size: cover !important;                  /* ensure normal cover mode */
-    background-attachment: scroll !important;           /* force scroll on mobile UAs */
-    transition: background-position .2s linear !important;
-  }
-  
-  /* Quick test: try showing the whole image (no crop). Use this to compare */
-  .hero-debug .hero-parallax.test-contain {
-    background-size: contain !important;       /* shows full image (letterboxed) */
-    background-repeat: no-repeat !important;
-    background-position: 50% 20% !important;
-    background-color: #000 !important;         /* hides any white bars */
-  }
-  
-  /* If you decide to temporarily use an <img> fallback inside hero, make sure it behaves responsively */
-  .hero-parallax img {
-    width: 100% !important;
-    height: auto !important;
-    object-fit: cover !important;
-    object-position: 50% 20% !important;
-    display: block !important;
-  }
-  
-  /* Debug helper to show computed box size (optional) */
-  .hero-debug .hero-parallax::before{
-    content: "HERO DBG";
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    font-size: 12px;
-    background: rgba(0,0,0,0.45);
-    color: #fff;
-    padding: 4px 6px;
-    border-radius: 4px;
-    z-index: 9999;
-  }
-  
+/* End of consolidated CSS */
