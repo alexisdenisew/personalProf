@@ -611,6 +611,13 @@ font-family: "Domine", serif;
     .person figcaption {
       font-size: 20px !important;
     }
+    .person {
+        width: 440px;
+      }
+      .person img {
+        width: 420px;
+        height: 420px;
+      }
 
     .bio {
         max-width: 840px;
