@@ -1,4 +1,3 @@
-
 /* GENERAL STUFF */
 
 body{
@@ -526,6 +525,23 @@ font-family: "Domine", serif;
   
   /* Extra debug helper (temporary): if you still see the zoomed image after the above,
      add a red outline to the hero so you can confirm which element is being rendered. */
+  /*
+  .hero-parallax {
+    outline: 3px dashed rgba(255,0,0,0.45) !important;
+  }
+  */
+  
+
+  /* ---------- HERO DEBUG HELPERS (paste at end of file) ---------- */
+/* Add .hero-debug to body to enable debugging visuals and safe fallbacks */
+
+.hero-debug .hero-parallax {
+    outline: 3px dashed rgba(255, 0, 0, 0.6) !important; /* shows the element boundary */
+    background-position: 50% 10% !important;            /* shift focus upward for mobile */
+    background-size: cover !important;                  /* ensure normal cover mode */
+    background-attachment: scroll !important;           /* force scroll on mobile UAs */
+    transition: background-position .2s linear !important;
+  }
   
   /* Quick test: try showing the whole image (no crop). Use this to compare */
   .hero-debug .hero-parallax.test-contain {
@@ -542,5 +558,19 @@ font-family: "Domine", serif;
     object-fit: cover !important;
     object-position: 50% 20% !important;
     display: block !important;
+  }
+  
+  /* Debug helper to show computed box size (optional) */
+  .hero-debug .hero-parallax::before{
+    content: "HERO DBG";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    padding: 4px 6px;
+    border-radius: 4px;
+    z-index: 9999;
   }
   
