@@ -582,7 +582,7 @@ font-family: "Domine", serif;
    MOBILE TYPOGRAPHY FIX (px + % only)
    Make text larger on mobile devices
 =========================================== */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 
     /* main page title */
     .title {
