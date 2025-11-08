@@ -598,18 +598,18 @@ font-family: "Domine", serif;
   
     /* bio names (Aidan, Alexis) */
     #subSubTitle {
-      font-size: 55px !important;
+      font-size: 35px !important;
     }
   
     /* body text */
     p, ol, li {
-      font-size: 25px !important;
+      font-size: 20px !important;
       line-height: 150% !important;
     }
   
     /* captions under images */
     .person figcaption {
-      font-size: 25px !important;
+      font-size: 20px !important;
     }
   }
   
