@@ -1,4 +1,396 @@
- .bio {
+
+/* GENERAL STUFF */
+
+body{
+    background-color: #2719d1;
+}
+
+#content{
+    margin: 5%;
+    text-align: left;
+}
+
+#center{
+    text-align: center;
+}
+
+.title{
+    padding: 10px;
+    font-family: "Domine", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 550%;
+    color: #ffab00;
+    text-shadow: -3px 3px #e91801;
+}
+
+.subTitle{
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 550;
+    font-style: normal;
+    color: #ffab00;
+    font-size: 450%;
+    text-align: left;
+}
+
+
+
+p, .person{
+    font-family: "Spectral", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #f9f9f9;
+    font-size: 150%;
+    margin-bottom: 15%;
+}
+
+ol{
+    font-family: "Spectral", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #f9f9f9;
+    font-size: 60%;
+    padding: 2px;
+}
+
+#subSubTitle{
+font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 300%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  color: #f9f9f9;
+}
+
+
+/* SPLASH PIC */
+
+
+.hero-parallax {
+    height: 75vh;
+    width: 100%;
+    background-image: url("assets/photos/splash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* <-- parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  
+  /* subtle gradient overlay to improve readability */
+  .hero-parallax::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1.2s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+
+
+
+
+
+
+
+/* FEATURING CREATORS */
+
+/* --- HORIZONTAL SCROLL ROW --- */
+.people-row {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  overflow-x: auto;
+  padding: 12px 4px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  /* invisible scrollbar */
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE/Edge */
+}
+.people-row::-webkit-scrollbar {
+  display: none;              /* Chrome/Safari */
+}
+
+/* --- PERSON CARD --- */
+.person {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 310px;                  /* bigger card width */
+  transform: translateY(14px) scale(.97);
+  opacity: 0;
+  transition: transform .45s cubic-bezier(.2,.9,.3,1), opacity .45s ease;
+}
+
+/* visible = animated in */
+.person.visible {
+  transform: none;
+  opacity: 1;
+}
+
+/* --- BIGGER CIRCULAR IMAGE --- */
+.person img {
+  width: 270px;                 /* increase size */
+  height: 270px;                /* increase size */
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+/* hover + focus micro animation */
+.person:hover img,
+.person:focus img {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.22);
+}
+
+/* caption under each circle */
+.person figcaption {
+  text-align: center;
+}
+
+/* small pulse animation */
+.person.pulse img {
+  animation: person-pulse .7s ease;
+}
+@keyframes person-pulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* responsive: smaller images on narrow screens */
+@media (max-width: 480px) {
+  .person {
+    width: 140px;
+  }
+  .person img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+  
+
+
+
+
+
+/* ACTIVATIONS SECTION */
+
+/* ===========================
+   GLOBAL RESET
+   (paste entire file, replacing old style.css)
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ===========================
+     ROW SELECTORS (supports both .video-row and .ig-row)
+  =========================== */
+  /* Target both naming conventions so it works no matter which class you used */
+  .video-row,
+  .ig-row {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 16px !important;
+    overflow-x: auto !important;
+    padding: 16px !important;
+    width: 100% !important;
+    scroll-snap-type: x mandatory !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    align-items: flex-start !important;
+  
+    /* Hide scrollbars visually but keep scrolling functional */
+    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none;  /* IE/Edge */
+  }
+  .video-row::-webkit-scrollbar,
+  .ig-row::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+  
+  /* ===========================
+     CARD SELECTORS (supports both .video-card and .ig-card)
+  =========================== */
+  .video-card,
+  .ig-card {
+    flex: 0 0 380px !important;     /* width of each card */
+    scroll-snap-align: center !important;
+    background: #ffab00 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    min-height: 560px !important;   /* prevents vertical squishing */
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    overflow: hidden !important;
+    position: relative !important;
+  
+    /* subtle enter animation */
+    opacity: 0 !important;
+    transform: translateY(12px) !important;
+    transition: opacity .45s ease, transform .45s ease !important;
+  }
+  .video-card.visible,
+  .ig-card.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  
+  /* ===========================
+     EMBED / IFRAME FIXES (force sizing so instagram embed doesn't overflow)
+     Covers instagram blockquote, potential iframe, and tiktok embed class
+  =========================== */
+  .video-card iframe,
+  .ig-card iframe,
+  .video-card blockquote.instagram-media,
+  .ig-card blockquote.instagram-media,
+  .video-card .tiktok-embed,
+  .ig-card .tiktok-embed {
+    width: 50% !important;
+    height: 650px !important;      /* increase if you want taller cards */
+    border-radius: 8px !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Remove forced padding fallback inside blockquotes (prevents a squashed fallback box) */
+  .video-card blockquote.instagram-media > div,
+  .ig-card blockquote.instagram-media > div {
+    padding: 0 !important;
+  }
+  
+  /* ===========================
+     RESPONSIVE
+  =========================== */
+  @media (max-width: 480px) {
+    .video-card,
+    .ig-card {
+      flex: 0 0 90vw !important;
+      min-height: 60vh !important;
+    }
+  
+    .video-card iframe,
+    .ig-card iframe,
+    .video-card blockquote.instagram-media,
+    .ig-card blockquote.instagram-media {
+      height: 60vh !important;
+    }
+  }
+  
+  /* ===========================
+     Small niceties: scroll indicator and focus state
+  =========================== */
+  .video-row:focus,
+  .ig-row:focus {
+    outline: none;
+  }
+  
+  /* optional: make focused card show a soft outline for accessibility */
+  .video-card:focus,
+  .ig-card:focus {
+    box-shadow: 0 6px 24px rgba(21, 101, 192, 0.12), 0 0 0 3px rgba(21,101,192,0.06) !important;
+    outline: none !important;
+  }
+
+
+  /* ABOUT US SECTION */
+  
+  /* ---------------------------
+   SECTION TITLE ANIMATION
+---------------------------- */
+.subTitle {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    animation: fadeSlideUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .subTitle::after {
+    content: "";
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #e91801, #2719d1);
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 3px;
+    animation: expandLine 1s 0.5s ease-out forwards;
+  }
+  
+  /* animations */
+  @keyframes fadeSlideUp {
+    from { transform: translateY(24px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes expandLine {
+    from { width: 0%; }
+    to { width: 90%; }
+  }
+  
+  /* ---------------------------
+     BODY TEXT STYLING
+  ---------------------------- */
+  p, ol {
+    line-height: 1.6;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  /* ---------------------------
+     BIOS LAYOUT + ANIMATION
+  ---------------------------- */
+  .bio-row {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin-top: 36px;
+    flex-wrap: nowrap;
+  }
+  
+  /* individual bio column */
+  .bio {
     flex: 1;
     max-width: 420px;
     text-align: center;
@@ -27,3 +419,209 @@
     border-radius: 50%;
     margin: 14px auto;
     display: block;
+  
+    /* aesthetics */
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.18);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  
+  /* hover effect */
+  .bio img:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 14px 40px rgba(0,0,0,0.28);
+  }
+  
+  
+  /* ---------------------------
+     NAME UNDER PHOTOS
+  ---------------------------- */
+  #subSubTitle {
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  
+  /* ---------------------------
+     RESPONSIVE — stack on mobile
+  ---------------------------- */
+  @media (max-width: 800px) {
+    .bio-row {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+
+
+  /* ===========================
+  STRONG MOBILE HERO FIX (paste at end of style.css)
+  - Forces mobile-safe behavior
+  - Two-step approach: preferred "cover, top focus" + robust fallback
+=========================== */
+
+/* 1) Preferred mobile fix: disable fixed-attachment, show top/center, reduce height */
+@media (max-width: 992px) {
+    /* high-specificity selector to beat other rules */
+    html body .hero-parallax,
+    .hero-parallax {
+      background-attachment: scroll !important;       /* stop buggy fixed behavior */
+      background-position: 50% 20% !important;       /* shift crop toward upper center (adjust % if needed) */
+      background-size: cover !important;             /* keep good fill while preventing extreme zoom */
+      height: 44vh !important;                        /* shorter hero to avoid huge scaling */
+      min-height: 300px !important;
+      max-height: 58vh !important;
+      overflow: hidden !important;
+      -webkit-backface-visibility: hidden !important;
+      backface-visibility: hidden !important;
+    }
+  
+    /* strengthen overlay so text remains readable */
+    html body .hero-parallax::after,
+    .hero-parallax::after {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.62)) !important;
+    }
+  
+    /* shrink and pad inner content */
+    html body .hero-content,
+    .hero-content {
+      padding-left: 18px !important;
+      padding-right: 18px !important;
+      box-sizing: border-box !important;
+    }
+  
+    /* reduce title scale on small viewports */
+    html body .title,
+    .title {
+      font-size: clamp(1.8rem, 6vw, 2.8rem) !important;
+      line-height: 1.08 !important;
+    }
+  }
+  
+  /* 2) Fallback mode — if the cover approach still appears zoomed on certain UAs,
+     switch to "contain" so the full image is visible (no cropping). This produces
+     letterboxing but prevents the huge zoom/crop problem. Toggle by enabling this
+     block if needed (it's intentionally lower priority so it won't usually run). */
+  @media (max-width: 420px) {
+    html body .hero-parallax,
+    .hero-parallax {
+      /* Use contain to guarantee full-image visibility on tiny viewports.
+         Uncomment the next line if you prefer seeing the whole image (with possible bars) */
+      /* background-size: contain !important; */
+  
+      /* If you enable contain you may want a darker background behind it to avoid white bars */
+      /* background-color: #000 !important; */
+    }
+  }
+  
+  /* 3) If your HTML ever switches to <img> inside the hero (recommended fallback),
+     the following ensures the <img> behaves responsively: */
+  @media (max-width: 992px) {
+    .hero-parallax img,
+    .hero img {
+      width: 100% !important;
+      height: auto !important;
+      object-fit: cover !important;
+      object-position: 50% 20% !important;
+      display: block !important;
+    }
+  }
+  
+  /* Extra debug helper (temporary): if you still see the zoomed image after the above,
+     add a red outline to the hero so you can confirm which element is being rendered. */
+  /*
+  .hero-parallax {
+    outline: 3px dashed rgba(255,0,0,0.45) !important;
+  }
+  */
+  
+
+  /* ---------- HERO DEBUG HELPERS (paste at end of file) ---------- */
+/* Add .hero-debug to body to enable debugging visuals and safe fallbacks */
+
+.hero-debug .hero-parallax {
+    outline: 3px dashed rgba(255, 0, 0, 0.6) !important; /* shows the element boundary */
+    background-position: 50% 10% !important;            /* shift focus upward for mobile */
+    background-size: cover !important;                  /* ensure normal cover mode */
+    background-attachment: scroll !important;           /* force scroll on mobile UAs */
+    transition: background-position .2s linear !important;
+  }
+  
+  /* Quick test: try showing the whole image (no crop). Use this to compare */
+  .hero-debug .hero-parallax.test-contain {
+    background-size: contain !important;       /* shows full image (letterboxed) */
+    background-repeat: no-repeat !important;
+    background-position: 50% 20% !important;
+    background-color: #000 !important;         /* hides any white bars */
+  }
+  
+  /* If you decide to temporarily use an <img> fallback inside hero, make sure it behaves responsively */
+  .hero-parallax img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    object-position: 50% 20% !important;
+    display: block !important;
+  }
+  
+  /* Debug helper to show computed box size (optional) */
+  .hero-debug .hero-parallax::before{
+    content: "HERO DBG";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    padding: 4px 6px;
+    border-radius: 4px;
+    z-index: 9999;
+  }
+  
+
+
+
+  /* ===========================================
+   MOBILE TYPOGRAPHY FIX (px + % only)
+   Make text larger on mobile devices
+=========================================== */
+@media (max-width: 700px) {
+
+    /* main page title */
+    .title {
+      font-size: 450% !important;
+    }
+  
+    /* section headers like "About Us" */
+    .subTitle {
+      font-size: 70px !important;
+    }
+  
+    /* bio names (Aidan, Alexis) */
+    #subSubTitle {
+      font-size: 35px !important;
+    }
+  
+    /* body text */
+    p, ol, li {
+      font-size: 20px !important;
+      line-height: 150% !important;
+    }
+  
+    /* captions under images */
+    .person figcaption {
+      font-size: 20px !important;
+    }
+
+    .bio {
+        max-width: 840px;
+      }
+      
+      /* ---------------------------
+         BIO IMAGES — circular + hover
+      ---------------------------- */
+      .bio img {
+        width: 820px;
+        height: 820px;
+      }
+  }
+  
