@@ -79,18 +79,16 @@
   })();
 
 
-  // DEBUG TOOLS: paste near the end of script.js
-(function(){
-    window.heroDebugToggle = function(useContain){
-      document.documentElement.classList.add('hero-debug'); // enable debug visuals
-      if(useContain){
-        document.querySelector('.hero-parallax')?.classList.add('test-contain');
-      } else {
-        document.querySelector('.hero-parallax')?.classList.remove('test-contain');
-      }
-    };
-    // optional: call once for quick testing (uncomment while debugging)
-    // heroDebugToggle(false); // normal debug (cover + scroll)
-    // heroDebugToggle(true);  // debug contain mode (no crop)
-  })();
-  
+// Force repaint/reflow (temporary debug / last resort)
+window.addEventListener('load', function() {
+  // try toggling a data attribute that triggers the "forced" CSS rules above
+  document.body.setAttribute('data-force-mobile-fonts', '1');
+  // small reflow hack
+  document.body.style.transform = 'translateZ(0)';
+  setTimeout(function() {
+    document.body.style.transform = '';
+    // remove attribute when done if you like:
+    // document.body.removeAttribute('data-force-mobile-fonts');
+  }, 80);
+});
+
