@@ -598,7 +598,7 @@ font-family: "Domine", serif;
   
     /* bio names (Aidan, Alexis) */
     #subSubTitle {
-      font-size: 35px !important;
+      font-size: 40px !important;
     }
   
     /* body text */
@@ -612,23 +612,23 @@ font-family: "Domine", serif;
       font-size: 20px !important;
     }
     .person {
-        width: 440px;
+        width: 320px;
       }
       .person img {
-        width: 420px;
-        height: 420px;
+        width: 300px;
+        height: 300px;
       }
 
     .bio {
-        max-width: 840px;
+        max-width: 280px;
       }
       
       /* ---------------------------
          BIO IMAGES — circular + hover
       ---------------------------- */
       .bio img {
-        width: 820px;
-        height: 820px;
+        width: 260px;
+        height: 260px;
       }
   }
   
