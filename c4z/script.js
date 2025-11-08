@@ -77,3 +77,20 @@
       if(e.key === 'ArrowLeft') row.scrollBy({left:-380, behavior:'smooth'});
     });
   })();
+
+
+  // DEBUG TOOLS: paste near the end of script.js
+(function(){
+    window.heroDebugToggle = function(useContain){
+      document.documentElement.classList.add('hero-debug'); // enable debug visuals
+      if(useContain){
+        document.querySelector('.hero-parallax')?.classList.add('test-contain');
+      } else {
+        document.querySelector('.hero-parallax')?.classList.remove('test-contain');
+      }
+    };
+    // optional: call once for quick testing (uncomment while debugging)
+    // heroDebugToggle(false); // normal debug (cover + scroll)
+    // heroDebugToggle(true);  // debug contain mode (no crop)
+  })();
+  
