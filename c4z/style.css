@@ -575,3 +575,38 @@ font-family: "Domine", serif;
     z-index: 9999;
   }
   
+
+
+  /* ===========================================
+   MOBILE TYPOGRAPHY FIX
+   Make text + headings larger on small screens
+=========================================== */
+@media (max-width: 700px) {
+
+    /* main page title */
+    .title {
+      font-size: clamp(2.2rem, 10vw, 3.2rem) !important;
+    }
+  
+    /* section titles */
+    .subTitle {
+      font-size: clamp(1.6rem, 8vw, 2.4rem) !important;
+    }
+  
+    /* bios names */
+    #subSubTitle {
+      font-size: clamp(1.4rem, 6.8vw, 2rem) !important;
+    }
+  
+    /* body text + list items */
+    p, ol, li {
+      font-size: clamp(1.05rem, 4.8vw, 1.25rem) !important;
+      line-height: 1.55 !important;
+    }
+  
+    /* figure captions under creator circles */
+    .person figcaption {
+      font-size: clamp(0.9rem, 4.4vw, 1.1rem) !important;
+    }
+  }
+  
