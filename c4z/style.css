@@ -588,12 +588,12 @@ font-family: "Domine", serif;
 
     /* main page title */
     .title {
-      font-size: 450% !important;
+      font-size: 200px !important;
     }
   
     /* section headers like "About Us" */
     .subTitle {
-      font-size: 70px !important;
+      font-size: 470px !important;
     }
   
     /* bio names (Aidan, Alexis) */
@@ -609,7 +609,7 @@ font-family: "Domine", serif;
   
     /* captions under images */
     .person figcaption {
-      font-size: 16px !important;
+      font-size: 25px !important;
     }
   }
   
