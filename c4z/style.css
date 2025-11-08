@@ -1,0 +1,457 @@
+
+/* GENERAL STUFF */
+
+body{
+    background-color: #2719d1;
+}
+
+#content{
+    margin: 5%;
+}
+
+#center{
+    text-align: center;
+}
+
+.title{
+    margin-top: 2%;
+    margin-bottom: 8%;
+    font-family: "Domine", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 550%;
+    color: #ffab00;
+    text-shadow: -3px 3px #e91801;
+}
+
+.subTitle{
+    margin-top: 3%;
+    margin-bottom: 2%;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 550;
+    font-style: normal;
+    font-size: 300%;
+    color: #ffab00;
+    font-size: 300%;
+}
+
+
+
+p, figcaption{
+    font-family: "Spectral", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #f9f9f9;
+    font-size: 120%;
+}
+
+ol{
+    font-family: "Spectral", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #f9f9f9;
+    font-size: 60%;
+    padding: 2px;
+}
+
+#subSubTitle{
+font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 200%;
+  margin-bottom: 5%;
+  margin-bottom: 5%;
+  color: #f9f9f9;
+}
+
+
+/* SPLASH PIC */
+
+
+.hero-parallax {
+    height: 75vh;
+    width: 100%;
+    background-image: url("assets/photos/splash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* <-- parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  
+  /* subtle gradient overlay to improve readability */
+  .hero-parallax::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1.2s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+
+
+
+
+
+
+
+/* FEATURING CREATORS */
+
+/* --- HORIZONTAL SCROLL ROW --- */
+.people-row {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  overflow-x: auto;
+  padding: 12px 4px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  /* invisible scrollbar */
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE/Edge */
+}
+.people-row::-webkit-scrollbar {
+  display: none;              /* Chrome/Safari */
+}
+
+/* --- PERSON CARD --- */
+.person {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 180px;                  /* bigger card width */
+  transform: translateY(14px) scale(.97);
+  opacity: 0;
+  transition: transform .45s cubic-bezier(.2,.9,.3,1), opacity .45s ease;
+}
+
+/* visible = animated in */
+.person.visible {
+  transform: none;
+  opacity: 1;
+}
+
+/* --- BIGGER CIRCULAR IMAGE --- */
+.person img {
+  width: 160px;                 /* increase size */
+  height: 160px;                /* increase size */
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+/* hover + focus micro animation */
+.person:hover img,
+.person:focus img {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.22);
+}
+
+/* caption under each circle */
+.person figcaption {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* small pulse animation */
+.person.pulse img {
+  animation: person-pulse .7s ease;
+}
+@keyframes person-pulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* responsive: smaller images on narrow screens */
+@media (max-width: 480px) {
+  .person {
+    width: 140px;
+  }
+  .person img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+  
+
+
+
+
+
+/* ACTIVATIONS SECTION */
+
+/* ===========================
+   GLOBAL RESET
+   (paste entire file, replacing old style.css)
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ===========================
+     ROW SELECTORS (supports both .video-row and .ig-row)
+  =========================== */
+  /* Target both naming conventions so it works no matter which class you used */
+  .video-row,
+  .ig-row {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 16px !important;
+    overflow-x: auto !important;
+    padding: 16px !important;
+    width: 100% !important;
+    scroll-snap-type: x mandatory !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    align-items: flex-start !important;
+  
+    /* Hide scrollbars visually but keep scrolling functional */
+    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none;  /* IE/Edge */
+  }
+  .video-row::-webkit-scrollbar,
+  .ig-row::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+  
+  /* ===========================
+     CARD SELECTORS (supports both .video-card and .ig-card)
+  =========================== */
+  .video-card,
+  .ig-card {
+    flex: 0 0 380px !important;     /* width of each card */
+    scroll-snap-align: center !important;
+    background: #ffab00 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    min-height: 560px !important;   /* prevents vertical squishing */
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    overflow: hidden !important;
+    position: relative !important;
+  
+    /* subtle enter animation */
+    opacity: 0 !important;
+    transform: translateY(12px) !important;
+    transition: opacity .45s ease, transform .45s ease !important;
+  }
+  .video-card.visible,
+  .ig-card.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  
+  /* ===========================
+     EMBED / IFRAME FIXES (force sizing so instagram embed doesn't overflow)
+     Covers instagram blockquote, potential iframe, and tiktok embed class
+  =========================== */
+  .video-card iframe,
+  .ig-card iframe,
+  .video-card blockquote.instagram-media,
+  .ig-card blockquote.instagram-media,
+  .video-card .tiktok-embed,
+  .ig-card .tiktok-embed {
+    width: 50% !important;
+    height: 650px !important;      /* increase if you want taller cards */
+    border-radius: 8px !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Remove forced padding fallback inside blockquotes (prevents a squashed fallback box) */
+  .video-card blockquote.instagram-media > div,
+  .ig-card blockquote.instagram-media > div {
+    padding: 0 !important;
+  }
+  
+  /* ===========================
+     RESPONSIVE
+  =========================== */
+  @media (max-width: 480px) {
+    .video-card,
+    .ig-card {
+      flex: 0 0 90vw !important;
+      min-height: 60vh !important;
+    }
+  
+    .video-card iframe,
+    .ig-card iframe,
+    .video-card blockquote.instagram-media,
+    .ig-card blockquote.instagram-media {
+      height: 60vh !important;
+    }
+  }
+  
+  /* ===========================
+     Small niceties: scroll indicator and focus state
+  =========================== */
+  .video-row:focus,
+  .ig-row:focus {
+    outline: none;
+  }
+  
+  /* optional: make focused card show a soft outline for accessibility */
+  .video-card:focus,
+  .ig-card:focus {
+    box-shadow: 0 6px 24px rgba(21, 101, 192, 0.12), 0 0 0 3px rgba(21,101,192,0.06) !important;
+    outline: none !important;
+  }
+
+
+  /* ABOUT US SECTION */
+  
+  /* ---------------------------
+   SECTION TITLE ANIMATION
+---------------------------- */
+.subTitle {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    animation: fadeSlideUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .subTitle::after {
+    content: "";
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #e91801, #2719d1);
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 3px;
+    animation: expandLine 1s 0.5s ease-out forwards;
+  }
+  
+  /* animations */
+  @keyframes fadeSlideUp {
+    from { transform: translateY(24px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes expandLine {
+    from { width: 0%; }
+    to { width: 90%; }
+  }
+  
+  /* ---------------------------
+     BODY TEXT STYLING
+  ---------------------------- */
+  p, ol {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  /* ---------------------------
+     BIOS LAYOUT + ANIMATION
+  ---------------------------- */
+  .bio-row {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin-top: 36px;
+    flex-wrap: nowrap;
+  }
+  
+  /* individual bio column */
+  .bio {
+    flex: 1;
+    max-width: 420px;
+    text-align: center;
+  
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+  }
+  
+  /* staggers animation timing */
+  .bio:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ---------------------------
+     BIO IMAGES — circular + hover
+  ---------------------------- */
+  .bio img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 14px auto;
+    display: block;
+  
+    /* aesthetics */
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.18);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  
+  /* hover effect */
+  .bio img:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 14px 40px rgba(0,0,0,0.28);
+  }
+  
+  
+  /* ---------------------------
+     NAME UNDER PHOTOS
+  ---------------------------- */
+  #subSubTitle {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  
+  /* ---------------------------
+     RESPONSIVE — stack on mobile
+  ---------------------------- */
+  @media (max-width: 800px) {
+    .bio-row {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+  
