@@ -25,7 +25,7 @@ body{
 }
 
 .subTitle{
-    margin-top: 3%;
+    margin-top: 5%;
     margin-bottom: 2%;
     font-family: "Staatliches", sans-serif;
     font-weight: 550;
@@ -36,7 +36,7 @@ body{
 
 
 
-p, figcaption{
+p, .person{
     font-family: "Spectral", serif;
     font-weight: 400;
     font-style: normal;
@@ -61,7 +61,7 @@ font-family: "Domine", serif;
   font-style: normal;
   font-size: 300%;
   margin-bottom: 5%;
-  margin-bottom: 5%;
+  margin-top: 5%;
   color: #f9f9f9;
 }
 
@@ -141,7 +141,7 @@ font-family: "Domine", serif;
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  width: 180px;                  /* bigger card width */
+  width: 310px;                  /* bigger card width */
   transform: translateY(14px) scale(.97);
   opacity: 0;
   transition: transform .45s cubic-bezier(.2,.9,.3,1), opacity .45s ease;
@@ -155,8 +155,8 @@ font-family: "Domine", serif;
 
 /* --- BIGGER CIRCULAR IMAGE --- */
 .person img {
-  width: 160px;                 /* increase size */
-  height: 160px;                /* increase size */
+  width: 270px;                 /* increase size */
+  height: 270px;                /* increase size */
   border-radius: 50%;
   object-fit: cover;
   display: block;
@@ -173,9 +173,7 @@ font-family: "Domine", serif;
 
 /* caption under each circle */
 .person figcaption {
-  font-size: 16px;
   text-align: center;
-  font-weight: 600;
 }
 
 /* small pulse animation */
