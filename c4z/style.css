@@ -252,9 +252,11 @@ font-family: "Domine", serif;
   .ig-card {
     flex: 0 0 380px !important;     /* width of each card */
     scroll-snap-align: center !important;
-    background: #ffab00 !important;
+    outline-style: solid !important;
+    outline-color: #ffab00 !important;
+    outline-width: medium !important;
     border-radius: 12px !important;
-    padding: 20px !important;
+    padding: 10px !important;
     min-height: 560px !important;   /* prevents vertical squishing */
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
 
