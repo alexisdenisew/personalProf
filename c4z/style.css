@@ -621,11 +621,11 @@ font-family: "Domine", serif;
       font-size: 20px !important;
     }
     .person {
-        width: 310px;
+        width: 280px;
       }
       .person img {
-        width: 280px;
-        height: 280px;
+        width: 250px;
+        height: 250px;
       }
 
     .bio {
