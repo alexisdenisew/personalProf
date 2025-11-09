@@ -235,7 +235,7 @@ font-family: "Domine", serif;
     white-space: nowrap !important;
     -webkit-overflow-scrolling: touch !important;
     align-items: flex-start !important;
-  
+    margin-bottom: 20%;
     /* Hide scrollbars visually but keep scrolling functional */
     scrollbar-width: none;     /* Firefox */
     -ms-overflow-style: none;  /* IE/Edge */
@@ -342,6 +342,7 @@ font-family: "Domine", serif;
 .subTitle {
     font-weight: 700;
     text-align: center;
+    margin-top: 5%;
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
@@ -438,6 +439,7 @@ font-family: "Domine", serif;
      NAME UNDER PHOTOS
   ---------------------------- */
   #subSubTitle {
+    margin-top: 8px;
     margin-bottom: 8px;
     font-weight: 700;
   }
