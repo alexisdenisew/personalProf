@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clueless with Alexis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+  </head>
+<body>
+  <!-- LOADING SPLASH -->
+  <div id="splash-overlay">
+  <div class="splash-window">
+    <div class="splash-logo">
+      <img
+        src="clueless-logo.png"
+        alt="Clueless with Alexis"
+      />
+    </div>
+    <div class="splash-subtitle">booting up Clueless…</div>
+      <div class="splash-bar">
+        <div class="splash-bar-fill"></div>
+      </div>
+      <div class="splash-hint">ur fav webshow's fav webshow</div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-logo">
+        <img
+        src="clueless-logo.png"
+        alt="Clueless with Alexis"
+        />
+    </div>
+    <nav class="site-nav">
+      <a class="sparkle-target" href="#player">Live</a>
+      <a class="sparkle-target" href="#episodes">Episodes</a>
+      <a class="sparkle-target" href="#about">About</a>
+      <a class="sparkle-target" href="#extras">Extras</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <!-- MAIN PLAYER SECTION -->
+    <section id="player" class="hero-section">
+      <div class="player-window">
+        <!-- top nav bar of player -->
+        <div class="player-topbar">
+          <div class="player-brand">Clueless with Alexis</div>
+          <div class="player-tabs">
+            <button class="tab active sparkle-target">HOME</button>
+            <button class="tab sparkle-target">LIVE</button>
+            <button class="tab sparkle-target">TOP RATED</button>
+            <button class="tab sparkle-target">NEW</button>
+          </div>
+          <div class="player-search">
+            <input type="text" placeholder="Search" />
+          </div>
+        </div>
+
+        <!-- body of player -->
+        <div class="player-main">
+          <!-- video area -->
+          <div class="player-video-wrap">
+            <div class="video-inner-frame">
+              <!-- PLACEHOLDER: we only create the iframe when user clicks -->
+              <div
+                id="main-video-placeholder"
+                class="main-video-placeholder sparkle-target"
+              >
+                <img
+                  src="https://img.youtube.com/vi/zTj_JG3aVRs/hqdefault.jpg"
+                  alt="Current episode thumbnail"
+                />
+                <div class="main-video-overlay">
+                  <div class="play-button">▶</div>
+                  <div class="overlay-text">click to play episode</div>
+                </div>
+              </div>
+              <!-- The real <iframe id="main-video"> will be injected here by JS -->
+            </div>
+
+            <!-- faux bottom controls -->
+            <div class="player-bottombar">
+              <div class="player-time">
+                <span class="timecode">00:17 / 03:01</span>
+              </div>
+              <div class="player-buttons">
+                <button class="icon-btn sparkle-target" aria-label="settings">
+                  ⚙
+                </button>
+                <button class="primary-btn sparkle-target">GIVE CASH</button>
+                <button class="primary-btn outline sparkle-target">UPGRADE</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- chat panel -->
+          <aside class="player-chat">
+            <header class="chat-header">
+              <div class="host-name">@alexisdenisew</div>
+              <div class="host-meta">US | ★★★★★</div>
+            </header>
+            <div class="chat-log">
+              <div class="chat-msg">
+                <span class="user">webque3n</span>
+                <span class="time">04:32am</span>
+                <p>i need the next episode asappp</p>
+              </div>
+              <div class="chat-msg">
+                <span class="user">netgirl82</span>
+                <span class="time">04:33am</span>
+                <p>is this streaming every week?</p>
+              </div>
+              <div class="chat-msg">
+                <span class="user">in2screens</span>
+                <span class="time">04:34am</span>
+                <p>drop the playlist plsss</p>
+              </div>
+              <div class="chat-msg">
+                <span class="user">cyberme</span>
+                <span class="time">04:35am</span>
+                <p>this episode ate</p>
+              </div>
+            </div>
+            <form class="chat-input">
+              <input type="text" placeholder="Chat with @alexisdenisew" />
+              <button type="submit" class="sparkle-target">SEND</button>
+            </form>
+          </aside>
+        </div>
+      </div>
+
+      <!-- <p class="hero-tagline">
+        A Y2K-coded webseries about the messy, glittery internet.
+      </p> -->
+    </section>
+
+    <!-- EPISODES SECTION (unchanged) -->
+    <section id="episodes" class="episodes-section">
+      <div class="section-header">
+        <h2>Episodes</h2>
+        <p class="section-subtitle">
+          Tap a square to load an episode in the main player.
+        </p>
+      </div>
+
+      <div class="episodes-grid">
+        <!-- EP 01 – same as main video -->
+        <button
+          class="episode-card active sparkle-target"
+          type="button"
+          data-embed="https://www.youtube.com/embed/nDHUslXIdrw?si=T_keYtRt6RU1Hw92"
+        >
+          <div class="episode-thumb">
+            <img
+              src="https://img.youtube.com/vi/nDHUslXIdrw/hqdefault.jpg"
+              alt="Episode 01 thumbnail"
+            />
+          </div>
+          <div class="episode-meta">
+            <span class="episode-number">EP 01</span>
+            <span class="episode-title">Queer, Clueless & Figuring It Out in NYC</span>
+          </div>
+        </button>
+
+        <!-- EP 02 – replace with your real embed URL -->
+        <button
+          class="episode-card sparkle-target"
+          type="button"
+          data-embed="https://www.youtube.com/embed/zTj_JG3aVRs?si=T_keYtRt6RU1Hw92"
+        >
+          <div class="episode-thumb">
+            <img
+              src="https://img.youtube.com/vi/zTj_JG3aVRs/hqdefault.jpg"
+              alt="Episode 02 thumbnail"
+            />
+          </div>
+          <div class="episode-meta">
+            <span class="episode-number">EP 02</span>
+            <span class="episode-title">The Hamptons Edition: Soft Life, Hard Truths</span>
+          </div>
+        </button>
+
+        <!-- EP 03 – replace with your real embed URL -->
+        <!-- <button
+          class="episode-card sparkle-target"
+          type="button"
+          data-embed="https://www.youtube.com/embed/VIDEO3_ID?si=SOMETHING"
+        >
+          <div class="episode-thumb">
+            <img
+              src="https://img.youtube.com/vi/VIDEO3_ID/hqdefault.jpg"
+              alt="Episode 03 thumbnail"
+            />
+          </div>
+          <div class="episode-meta">
+            <span class="episode-number">EP 03</span>
+            <span class="episode-title">Episode Three Title</span>
+          </div>
+        </button> -->
+      </div>
+    </section>
+
+
+
+
+
+    <!-- REELS / CLIPS SECTION -->
+<section id="reels" class="reels-section">
+  <div class="section-header">
+    <h2>Clueless Clips</h2>
+    <p class="section-subtitle">
+      Quick hits from the show, straight from socials.
+    </p>
+  </div>
+
+  <div class="reels-strip-wrap">
+    <button
+      class="reels-arrow reels-arrow-left sparkle-target"
+      type="button"
+      aria-label="Scroll left"
+    >
+      ◀
+    </button>
+
+    <div class="reels-strip" id="reels-strip">
+      <!-- Reel 1 -->
+      <article class="reel-card sparkle-target">
+        <div class="reel-frame">
+          <iframe
+            src="https://www.instagram.com/reel/DOKYNaODEi4/embed"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="reel-meta">
+          <span class="reel-title">The Hamptons r a scam</span>
+          <span class="reel-tag">Clip</span>
+        </div>
+      </article>
+
+      <!-- Reel 2 -->
+      <article class="reel-card sparkle-target">
+        <div class="reel-frame">
+          <iframe
+            src="https://www.instagram.com/reel/DQRpgeCDgjL/embed"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="reel-meta">
+          <span class="reel-title">Jersey girl pumps gas</span>
+          <span class="reel-tag">Clip</span>
+        </div>
+      </article>
+
+      <!-- Reel 3 -->
+      <article class="reel-card sparkle-target">
+        <div class="reel-frame">
+          <iframe
+            src="https://www.instagram.com/reel/DQZ4DpykYNf/embed"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="reel-meta">
+          <span class="reel-title">Local organizing 101</span>
+          <span class="reel-tag">Sneak peek</span>
+        </div>
+      </article>
+
+      <!-- add more reel-card blocks as needed -->
+    </div>
+
+    <button
+      class="reels-arrow reels-arrow-right sparkle-target"
+      type="button"
+      aria-label="Scroll right"
+    >
+      ▶
+    </button>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+      <div class="section-header">
+        <h2>About Clueless</h2>
+      </div>
+      <div class="about-inner">
+        <p>
+          <strong>Clueless with Alexis</strong> is a chaos-but-make-it-educational 
+          webseries following host Alexis Williams as she stumbles, laughs, and 
+          stress-googles her way through “how to be an adult” in New York City. 
+          From surviving MTA meltdowns and broker fees to figuring out dating, 
+          money, mental health, and whether she’s even registered to vote, Alexis 
+          uses her own life as the syllabus for the questions everyone has but no one 
+          wants to admit out loud.
+        </p>
+        <p>
+          A multi-hyphenate creative, coder, and activist, Alexis built her platform 
+          by making smart, funny content that doesn’t shy away from real issues facing 
+          Gen-Z, especially marginalized communities. In Clueless with Alexis, she breaks 
+          down how politics and power quietly shape everyday life, while still feeling 
+          like your brutally honest friend FaceTiming you from the subway. Each episode 
+          mixes vlog-style storytelling, interviews, and deep dives so viewers walk away 
+          feeling a little less clueless and a lot more in control.
+        </p>
+        <p class="about-highlight">
+          New episodes drop on YouTube. Watch live in the player above, or
+          dive into the archive of past episodes.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXTRAS / COMMUNITY SECTION -->
+    <section id="extras" class="extras-section">
+      <div class="section-header">
+        <h2>Extras & Community</h2>
+      </div>
+      <div class="extras-grid">
+        <div class="extras-card">
+          <h3>Cast & Credits</h3>
+          <p>
+            Clueless  is produced by Wateringhole Media, with production 
+            support from Ashley Williams and editing by Trillium Bentley.
+          </p>
+        </div>
+
+        <div class="extras-card">
+          <h3>Join the Clueless Club</h3>
+          <p>
+            Connect with us on socials! You can find us at @cluelesswithalexis
+            on all platforms!
+          </p>
+          <!-- <form class="newsletter-form">
+            <input type="email" placeholder="email@cybergirltv.com" />
+            <button type="submit" class="sparkle-target">Sign up</button>
+          </form> -->
+        </div>
+
+        <div class="extras-card">
+          <h3>Sneak Peek</h3>
+          <p>
+            Next up? A deep dive into local organizing: 
+            what it is, why it matters, and how regular people (aka you and me) 
+            actually keep a city running.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© Clueless with Alexis · Built by an icon with HTML</p>
+  </footer>
+</body>
+</html>
