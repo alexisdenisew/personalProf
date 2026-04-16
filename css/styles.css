@@ -304,6 +304,51 @@ section {
 }
 
 /* =========================
+   STATS — MOBILE TIGHTENING
+========================= */
+
+@media (max-width: 768px) {
+
+  .profile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap: 14px 10px; /* tighter spacing */
+    margin-top: 16px;
+  }
+
+  .stat {
+    align-items: center;
+    text-align: center;
+  }
+
+  .stat h3 {
+    font-size: 16px; /* smaller number */
+    font-weight: 600;
+  }
+
+  .stat p {
+    font-size: 11px; /* smaller label */
+    line-height: 1.2;
+    max-width: 90px; /* force clean wrapping */
+  }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 480px) {
+  .profile-stats {
+    grid-template-columns: repeat(2, 1fr); /* stack better */
+  }
+
+  .stat h3 {
+    font-size: 15px;
+  }
+
+  .stat p {
+    font-size: 10px;
+  }
+}
+
+/* =========================
    HIGHLIGHTS
 ========================= */
 
@@ -593,6 +638,56 @@ section {
 .resume-section p {
   margin-bottom: 12px;
 }
+
+/* =========================
+   ABOUT / CONTACT — MOBILE FIX
+========================= */
+
+@media (max-width: 768px) {
+
+  .about-wrapper {
+    display: flex;              /* kill grid */
+    flex-direction: column;     /* stack everything */
+    gap: 24px;
+  }
+
+  .about-text {
+    max-width: 100%;            /* remove skinny constraint */
+  }
+
+  .about-visual {
+    position: relative;         /* remove sticky */
+    top: auto;
+
+    display: grid;              /* nicer layout than stack */
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .about-visual img {
+    width: 100%;
+    height: 140px;              /* consistent card feel */
+    object-fit: cover;
+    border-radius: 14px;
+  }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 480px) {
+
+  .about-visual {
+    grid-template-columns: 1fr; /* full width images */
+  }
+
+  .about-visual img {
+    height: 180px;
+  }
+
+  .about-wrapper {
+    gap: 20px;
+  }
+}
+
 
 /* =========================
    MODAL
