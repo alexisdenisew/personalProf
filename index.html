@@ -1,38 +1,864 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alexis Williams</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alata&family=Poppins&display=swap" rel="stylesheet">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/fav/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/fav/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/fav/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-  <div class="navbar">
-    <div class="left-nav">
-      <a href="pages/about.html">about</a>
-      <a target="_blank" href="http://www.pb-resources.com">pbr</a>
-      <a href="pages/press.html">press</a>
-    </div>
-    <div class="right-nav">
-      <h1 class="title">alexis</h1>
-    </div>
-  </div>
-  <div class="content">
-    <img src="assets/profile2.png" alt="Image" class="main-image">
-    <div id="info">
-      <p class="contact">contact: team@alexisdenisew.com</p>
-      <p class="social">@alexisdenisew</p>
-    </div>
-  </div>
-</body>
 
+  <!-- ================= NAV ================= -->
+  <header class="nav">
+  <div class="nav-inner">
+    <h1 class="logo">@alexisdenisew</h1>
+  </div>
+</header>
+
+  <main>
+
+    <!-- ================= PROFILE HEADER ================= -->
+    <section class="profile-header reveal">
+
+      <div class="profile-top">
+        <img src="assets/images/profile.jpg" class="profile-pic" />
+
+        <div class="profile-info">
+          <br>
+          <h2 class="name">Alexis Williams</h2>
+            <p class="title">25, NYC</p>
+
+            <p class="bio">
+              
+           I build things on the internet that make people care, and then figure out how to turn that care into action.
+          <br><br>
+           From <a href = "https://www.pb-resources.com/">PB-Resources</a> to <a href = "https://softwearbylex.com/impact.html">Softwear by Lex</a> to leading creator organizing for <a href = "https://www.usermag.co/p/zohran-just-hosted-the-first-press">Zohran for NYC</a>, my work has always been about turning ideas into infrastructure, and passion into action.
+              <br><br>
+          Now, as Deputy Press Secretary for the City of New York, I focus on how information actually moves—using creators, community, and the internet to turn policy into something people can see, understand, and engage with.
+          
+          
+          </p>
+
+            <p class="impact-line">
+            1B+ monthly reach · 600+ creators activated · largest creator-led political distribution system to date
+            </p>
+
+          <div class="profile-actions">
+            <button class="btn primary">Contact</button>
+            <a href="assets/files/Alexis_Williams_Resume.pdf" target="_blank" class="btn primary">
+              View Resume
+            </a>
+          </div>
+
+          <br>
+
+
+        </div>
+      </div>
+
+      <div class="profile-stats">
+
+        <div class="stat">
+          <h3>2M+</h3>
+          <p>PB-Resources Users</p>
+        </div>
+
+        <div class="stat">
+          <h3>3</h3>
+          <p>Social Impact Platforms </p>
+        </div>
+
+        <div class="stat">
+          <h3>100+</h3>
+          <p>Organized Creator Activations</p>
+        </div>
+
+        <div class="stat">
+          <h3>NYC</h3>
+          <p>Gov @ Scale</p>
+        </div>
+
+        <div class="stat">
+          <h3>5+</h3>
+          <p>Social Impact Projects</p>
+        </div>
+
+      </div>
+
+      <div class="profile-highlights">
+        <div class="highlight">First-Gen</div>
+        <div class="highlight">Women in STEM</div>
+        <div class="highlight">Afro-Latina</div>
+        <div class="highlight">Queer</div>
+        <div class="highlight">Politics</div>
+        <div class="highlight">Culture</div>
+        <div class="highlight">Women's Sports</div>
+        <div class="highlight">Beauty + Fashion</div>
+      </div>
+
+    </section>
+
+    <!-- ================= PHOTO GALLERY ================= -->
+    <!-- <section class="photo-gallery reveal">
+
+      <div class="gallery-header">
+        <h3>moments</h3>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item">
+          <img src="assets/images/photo1.jpg" />
+          <div class="gallery-caption">city hall</div>
+        </div>
+
+        <div class="gallery-item tall">
+          <img src="assets/images/photo2.jpg" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/images/photo3.jpg" />
+        </div>
+
+        <div class="gallery-item wide">
+          <img src="assets/images/photo4.jpg" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/images/photo5.jpg" />
+        </div>
+
+      </div>
+
+    </section> -->
+
+    <!-- ================= TAB NAV ================= -->
+    <section class="tab-nav reveal">
+      <button class="tab active" data-tab="feed">Feed</button>
+      <button class="tab" data-tab="press">Press</button>
+      <button class="tab" data-tab="work">Work</button>
+      <button class="tab" data-tab="projects">Projects</button>
+      <button class="tab" data-tab="writing">Writing</button>
+      <button class="tab" data-tab="about">About</button>
+      <button class="tab" data-tab="resume">Resume</button>
+    </section>
+
+    <!-- ================= CONTENT ================= -->
+    <section class="content">
+
+        <div class="tab-content" id="press">
+
+  <div class="press-container">
+
+    <div class="press-card feature">
+      <a href="#" target="_blank" class="press-card large">
+          <p>Featured in What's Up: A worldwide compendium of internet crushes, real-life besties, and boundary-pushing people doing cool shit on the ground. This is What’s Up in Spring 2026.</p>
+          <span>i-D magazine</span>
+        </a>
+    </div>
+
+    <!-- CREATORS FOR ZOHRAN -->
+    <div class="press-group">
+      <h2>creators for zohran!</h2>
+
+      <div class="press-grid">
+
+        <a href="#" target="_blank" class="press-card large">
+          <p>zohran hosted the first ever candidate press conference exclusively for content creators</p>
+          <span>user mag</span>
+        </a>
+
+        <a href="#" target="_blank" class="press-card medium">
+          <p>will democrats take the wrong lesson from zohran mamdani’s social media success?</p>
+          <span>the hollywood reporter</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- PBR -->
+    <div class="press-group">
+      <h2>pbr</h2>
+
+      <div class="press-grid">
+
+        <a href="#" class="press-card medium">
+          <p>back to school with levi's</p>
+          <span>teen vogue</span>
+        </a>
+
+        <a href="#" class="press-card large">
+          <p>rachel sennott and stem's resident hot girl alexis williams talk online activism</p>
+          <span>document journal</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>this nyu student's social justice website is filled with answers</p>
+          <span>blavity</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>tandon student speaks out in code rather than words</p>
+          <span>washington square news</span>
+        </a>
+
+        <a href="#" class="press-card medium">
+          <p>alexis williams: an activist fighting for change through code</p>
+          <span>pulse spikes</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- POLITICAL FEATURES -->
+    <div class="press-group">
+      <h2>political features</h2>
+
+      <div class="press-grid">
+
+        <a href="#" class="press-card large">
+          <p>pro-harris tiktok felt safe in an algorithmic bubble — until election day</p>
+          <span>the verge</span>
+        </a>
+
+        <a href="#" class="press-card medium">
+          <p>gen z’s political priorities feel both fresh and familiar</p>
+          <span>wnyc</span>
+        </a>
+
+        <a href="#" class="press-card medium">
+          <p>‘hottie’ dems and chappell roan stans: meet the 200 tiktokers who scored access to the convention</p>
+          <span>the guardian</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- STEM ADVOCACY -->
+    <div class="press-group">
+      <h2>stem advocacy</h2>
+
+      <div class="press-grid">
+
+        <a href="#" class="press-card medium">
+          <p>alexis williams is conquering the world one step at a time</p>
+          <span>cosmopolitan</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>changing the way you see tech</p>
+          <span>tedx colorado springs</span>
+        </a>
+
+        <a href="#" class="press-card large">
+          <p>how olay is working to shrink the gender gap in stem</p>
+          <span>harper's bazaar</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>engineering in a male-dominated field</p>
+          <span>girls talk tech</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>stemtember</p>
+          <span>lightbox</span>
+        </a>
+
+        <a href="#" class="press-card medium">
+          <p>town and country philanthropy summit</p>
+          <span>town and country</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>gwc @ goldman sachs: the girls’ perspective</p>
+          <span>girls who code</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ACTIVISM -->
+    <div class="press-group">
+      <h2>activism</h2>
+
+      <div class="press-grid">
+
+        <a href="#" class="press-card large">
+          <p>what is digital blackface? experts explain why the social media practice is problematic</p>
+          <span>women's health</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>chatham for black lives teach-in highlights</p>
+        </a>
+
+        <a href="#" class="press-card medium">
+          <p>inequality in the tech space, how to troll trump, and being helpful in the world</p>
+          <span>i'm over it podcast</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>chatham for black lives event features williams sisters who speak out</p>
+          <span>tap</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>former, current chatham high students demand anti-racism changes</p>
+          <span>tap</span>
+        </a>
+
+        <a href="#" class="press-card medium">
+          <p>chatham school board hears demands for anti-racist reforms</p>
+          <span>courier</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- PROFILES -->
+    <div class="press-group">
+      <h2>profiles</h2>
+
+      <div class="press-grid">
+
+        <a href="#" class="press-card medium">
+          <p>an interview with alexis williams</p>
+          <span>8th wonder magazine</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>the "robot @ nyu" really is human</p>
+          <span>nyu program board</span>
+        </a>
+
+        <a href="#" class="press-card medium">
+          <p>16 young black americans making history right now</p>
+          <span>dosomething.org</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>women in stem ig live</p>
+          <span>@creators</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>international women's day: getting to know alexis</p>
+          <span>innovateher uk</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- SPECIAL FEATURES -->
+    <div class="press-group">
+      <h2>special features</h2>
+
+      <div class="press-grid">
+
+        <a href="#" class="press-card large">
+          <p>karlie kloss dedicates her collection to next generation women</p>
+          <span>adidas</span>
+        </a>
+
+        <a href="#" class="press-card medium">
+          <p>revealing my beauty collab</p>
+          <span>estee lauder</span>
+        </a>
+
+        <a href="#" class="press-card medium">
+          <p>introducing: the smartest girls in the world</p>
+          <span>karlie kloss</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>karlie kloss and alexis williams q&a for a cause</p>
+          <span>stockx</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>kode with klossy x #shecanstem</p>
+          <span>ad council</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ACHIEVEMENTS -->
+    <div class="press-group">
+      <h2>achievements</h2>
+
+      <div class="press-grid">
+
+        <a href="#" class="press-card medium">
+          <p>chatham students pickup two hackathon awards</p>
+          <span>patch</span>
+        </a>
+
+        <a href="#" class="press-card medium">
+          <p>worldwide developers conference</p>
+          <span>teen vogue</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>chatham middle schooler named scholastic kid reporter</p>
+          <span>patch</span>
+        </a>
+
+        <a href="#" class="press-card small">
+          <p>fifth-grader wins visit from sharon robinson</p>
+          <span>patch</span>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+      <!-- ===== FEED ===== -->
+      <div class="tab-content active" id="feed">
+        <div class="feed-container">
+  
+
+          <!-- FILTERS -->
+          <div class="feed-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="policy">Policy</button>
+            <button class="filter-btn" data-filter="creators">Creators</button>
+            <button class="filter-btn" data-filter="tech">Tech</button>
+            <button class="filter-btn" data-filter="culture">Culture</button>
+          </div>
+
+          <div class="feed">
+
+            <!-- POLICY -->
+
+            <div class="card feed-card feature reveal" data-category="policy">
+              <h2>Deputy Press Secretary @ NYC</h2>
+              <p>
+                  Beyond excited to share that I’m joining the NYC Office of the Mayor as Deputy Press Secretary for Culture Partnerships and Black media! Organizing for Mamdani’s campaign has been such a joy, and I’m so thrilled to officially join the team. Thank you to the best mentor, Emilia Rowland, for this opportunity. This role is such a dream and I can’t wait to use it to help create a more beautiful New York City.
+              </p>
+              <div class="card-footer">
+                  <span><a href = "https://www.linkedin.com/posts/activity-7415072420929392642-Szau?utm_source=share&utm_medium=member_desktop&rcm=ACoAACM6fOEBfBEr1r-Grdlw-kBDPJGSAr94qAo">Posted on Linkedin</a> January 2026</span>
+              </div>
+              </div>
+
+            <!-- CREATORS -->
+              <div class="card feed-card media reveal" data-category="creators">
+              <img src="assets/images/posts/post1.png" />
+              <div class="card-body">
+                  <p>
+                  oh just two kids who organized 200+ creators and pulled in hundreds of thousands of $$$$ in in-kind media that has already reached millions for the most energizing political campaign in years 😌 nbdddd 🤷‍♀️🌟🌟🌟 @creators4zohran
+                  </p>
+              </div>
+              <div class="card-footer">
+                  <span><a href = "https://www.instagram.com/p/DQVJ0GuDNQy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Posted on Instagram</a></span>
+              </div>
+              </div>
+
+              <!-- POLICY -->
+              <div class="card feed-card text-only reveal" data-category="creators">
+              <p>
+                  Nearly 1 BILLION views in less than 45 days across social media platforms for a local election!?!
+                  <br><br>
+                  That’s the reach of Aidan Kohn-Murphy and my creator coalition, Creators 4 Zohran — the fastest-scaling, creator-led civic campaign in NYC in recent election cycles for Zohran Mamdani’s 2025 mayoral campaign.
+                  <br><br>
+                  Working in partnership with Emilia Rowland, we built a first-of-its-kind, creator-led content engine for a political campaign. Our cohort was a multigenerational, multicultural, and multifaceted group of New Yorkers, plus a few supporters from around the country, whose content was powered by their own authentic voices and lived experiences. What tied it all together was that people genuinely felt heard and seen by Mamdani’s focus on affordability and his clear policy commitments.
+              </p>
+              <div class="card-footer">
+                  <span><a href = "https://www.linkedin.com/posts/activity-7405623849360359425-wQCq?utm_source=share&utm_medium=member_desktop&rcm=ACoAACM6fOEBfBEr1r-Grdlw-kBDPJGSAr94qAo">Posted on Linkedin</a> December 2026</span>
+              </div>
+              </div>
+
+              
+
+              <!-- TECH -->
+
+              <div class="card feed-card media reveal" data-category="tech">
+              <img src="assets/images/posts/post2.png" />
+              <div class="card-body">
+                  <p>
+                  Honored to have been given the opportunity to speak at AfroTech 2025, sharing all my insights about the creator economy and maintaining your unique identity as a creator.</p>
+              </div>
+              <div class="card-footer">
+                  <span><a href = "https://www.instagram.com/p/DQhtzx9kld9/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Posted on Instagram</a></span>
+              </div>
+              </div>
+
+              <div class="card feed-card media reveal" data-category="tech">
+              <img src="assets/images/posts/post3.png" />
+              <div class="card-body">
+                  <p>
+                    Had a blast talking Gen-Z, AI, and the future of work at @salesforce. For me, a great workplace starts with strong foundations: true inclusion, bridging different lived experiences, and prioritizing social impact & investing in the communities where your business operates. Not only do companies owe consumers a great experience, but their labor force and local community as well!! So many thanks to Project Everyone @theglobalgoals and @thejusticefaith for giving me the space to share! 💋💋
+                  </p>
+              </div>
+              <div class="card-footer">
+                  <span><a href = "https://www.instagram.com/p/DPWgmGJDmpI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Posted on Instagram</a></span>
+              </div>
+              </div>
+
+
+              <div class="card feed-card text-only reveal" data-category="tech">
+              <p>
+                  Last month, I had the privilege of hosting the Creative Summit Stage at Web Summit Vancouver, the biggest stage I've spoken on so far at the biggest tech conference in the world. Still can’t believe it happened.
+                  <br><br>
+                  For those who don’t know, Web Summit is one of the largest global gatherings for tech, startups, and innovation, and this was Vancouver’s first time hosting one of their events, bringing together thousands of people across industries to talk about the future we’re all building.
+                  </p>
+
+              <div class="card-footer">
+                  <span><a href = "https://www.linkedin.com/posts/activity-7347023145343631360-ej1L?utm_source=share&utm_medium=member_desktop&rcm=ACoAACM6fOEBfBEr1r-Grdlw-kBDPJGSAr94qAo">Posted on Linkedin</a> June 2025</span>
+              </div>
+              </div>
+
+              
+              
+
+              <!-- CULTURE -->
+              <div class="card feed-card media reveal" data-category="culture">
+              <img src="assets/images/posts/post4.png" />
+              <div class="card-body">
+                  <p>
+                    Diane von Furstenberg x @vitalvoices working on making those UN SDG targets !!! 💪
+                  </p>
+              </div>
+              <div class="card-footer">
+                  <span><a href = "https://www.instagram.com/p/DO_PFlFjhLZ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Posted on Instagram</a></span>
+              </div>
+              </div>
+
+
+              <!-- Everything else -->
+
+              <div class="card feed-card media reveal" data-category="tech">
+              <img src="assets/images/posts/post6.png" />
+              <div class="card-body">
+                  <p>
+                    Last week I had the pleasure of joining a group of student developers at Apple’s WWDC25 event. In 2018, I received the same scholarship these students were awarded and it kick-started my confidence in pursuing engineering.
+                  <br><br>
+                  The importance of recognizing developers from underrepresented communities, especially women, is hard to overstate. We need us in these rooms. As builders, as critics, and as people willing to push for better from those holding the reins of power.
+                  </p>
+              </div>
+              <div class="card-footer">
+                  <span><a href = "https://www.instagram.com/p/DLBQ-hquZOf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Posted on Instagram</a></span>
+              </div>
+              </div>
+
+              <div class="card feed-card text-only reveal" data-category="policy">
+              <p>
+                 I am so grateful to be featured in Mission Magazine's most recent issue, "The New Order." An issue highlighting the powerful impact the youth has had on the world. "The New Order" features so many heavy hitters in this space as well as impactful entertainers that I've looked up to for ages. To be included in the same conversations as these amazing individuals is such a pinch-me moment. During these difficult times it means so much not only to have my work highlighted, but celebrated. 
+              </p>
+              <div class="card-footer">
+                  <span><a href = "https://www.linkedin.com/posts/activity-7266858457578795009-6Tn9?utm_source=share&utm_medium=member_desktop&rcm=ACoAACM6fOEBfBEr1r-Grdlw-kBDPJGSAr94qAo">Posted on Linkedin</a> January 2025</span>
+              </div>
+              </div>
+
+              <div class="card feed-card media reveal" data-category="creator">
+              <img src="assets/images/posts/post8.png" />
+              <div class="card-body">
+                  <p>
+                    Content meeting at Congress with Jasmine Crockett
+                  </p>
+              </div>
+              <div class="card-footer">
+                  <span><a href = "https://www.instagram.com/p/DJW96dJuABa/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Posted on Instagram</a></span>
+              </div>
+              </div>
+
+              <div class="card feed-card text-only reveal" data-category="policy">
+              <p>
+                 Thrilled to kick off the New Year with this incredible honor from Black Enterprise Magazine. I’m so proud to share that I’ve been included in their 2024 "Black Enterprise 40 Under 40" list for Politics and Social Impact.
+              </p>
+              <div class="card-footer">
+                  <span><a href = "https://www.linkedin.com/posts/activity-7282434177084334080-rQMu?utm_source=share&utm_medium=member_desktop&rcm=ACoAACM6fOEBfBEr1r-Grdlw-kBDPJGSAr94qAo">Posted on Linkedin</a> January 2025</span>
+              </div>
+              </div>
+
+              <div class="card feed-card media reveal" data-category="creator">
+              <img src="assets/images/posts/post10.png" />
+              <div class="card-body">
+                  <p>
+                    honored to have joined @noteswithkai’s live taping at @njpac tonight for a conversation around gen-z, voting, and our complicated relationship with electoral politics.
+                  </p>
+              </div>
+              <div class="card-footer">
+                  <span><a href = "https://www.instagram.com/p/DAhh4uBOc4n/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Posted on Instagram</a></span>
+              </div>
+              </div>
+
+              <div class="card feed-card text-only reveal" data-category="tech">
+              <p>
+                2025 has been a whirlwind so far, and I’ve been diving deep into my work at the intersection of code, social impact, and creativity. Here are some highlights I’m especially proud of!
+                <br><br>
+
+                <a href = "https://www.instagram.com/reel/DEYLlg6S6SF/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==">Collaboration With TOGETHXR:</a> I’m obsessed with women’s sports, especially college basketball (yup, my team won yesterday 😌 ). Recently, my women’s sports stats project, delivering real-time data, blew up on social media, which brought me to TOGETHXR, who I excitedly partnered with for some pre-NCAA Tournament content. It was amazing to bring my STEM degree to life by helping fans fill out their brackets based on real-time stats. Can’t wait to share more updates from Togethxr x Alexis!
+                <br><br>
+                
+                <a href = "https://www.refinery29.com/en-us/why-i-code-alexis-williams-creative-technologist">Feature in Refinery29:</a> One of my year’s highlights so far was joining Refinery29 and Code.org's “Code is Everywhere” campaign. Growing up, I never saw a computer scientist who looked like me: a Black girl in pink, jamming to Taylor Swift while furiously debugging. This campaign gave me the chance to change that narrative and represent the next generation of coders, inspiring others to see themselves in the field!
+                <br><br>
+
+                <a href = "https://www.instagram.com/reel/DHtBzEkOkmV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==">"Abortion is Freedom" Campaign:</a> I was proud to join SOZE and the Women's Equality Center's “Abortion is Freedom” campaign, highlighting the hashtag#GreenWave movement in Latin America. This movement, which protects bodily autonomy, is something we need in the U.S. now more than ever. As a queer woman, I firmly believe in fighting for everyone’s right to bodily autonomy, and I’m honored to support this powerful campaign.
+                <br><br>
+
+                <a href = "https://www.instagram.com/p/DH6eJq0u6Dh/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==">Feature in Pinky Magazine:</a> I had an insightful conversation with Halle Robbe for the Creative Technologists issue of Pinky Magazine. We discussed the cost-benefit ratio of AI in our daily lives and the fast-paced evolution of technology, which often feels more like faux-advancement. We also explored the impact of this progress on people and the planet, stressing the importance of thinking critically about modern tech.
+                <br><br>
+
+
+                <a href = "https://www.instagram.com/p/DICNP_7SMq5/?hl=en&img_index=1">Gloria Steinem Talking Circle on Sustainable Fashion:</a> Lastly, I joined a talking circle at Gloria Steinem’s house, focused on sustainable fashion, hosted by Sophia Kianni and Phoebe Gates. It was an inspiring experience to discuss pressing social issues with such a visionary figure. I’m excited to continue doing impactful social justice work, inspired by Gloria’s legacy and vision.
+              
+                </p>
+
+              <div class="card-footer">
+                  <span><a href = "https://www.linkedin.com/posts/activity-7315093666220376065-7vwh?utm_source=share&utm_medium=member_desktop&rcm=ACoAACM6fOEBfBEr1r-Grdlw-kBDPJGSAr94qAo">Posted on Linkedin</a> February 2025</span>
+              </div>
+              </div>
+
+              
+
+          </div>
+        </div>
+       </div>
+
+      <!-- ===== WORK ===== -->
+      <div class="tab-content" id="work">
+        <div class="work-list">
+
+          <div class="card work-card reveal">
+            <h3>City of New York</h3>
+            <p>Deputy Press Secretary— Full-time</p>
+            <p class="work-desc">
+                Leading creator strategy and digital distribution across policy initiatives, translating city governance into high-reach, platform-native content.
+            </p>
+          </div>
+
+            <div class="card work-card reveal">
+              <h3>Creators for Zohran</h3>
+              <p>Co-Founder Co-Director</p>
+              <p class="work-desc">
+                  Built and scaled a creator network that reached over 1B monthly views during the mayoral campaign.
+              </p>
+            </div>
+
+            <div class="card work-card reveal">
+              <h3>@FEMINIST</h3>
+              <p>Digital Editor, Content Collaborator— Consultant</p>
+            </div>
+
+            <div class="card work-card reveal">
+              <h3>Wateringhole Media</h3>
+              <p>Host— Consultant</p>
+              <p class="work-desc">
+                  Hosts 'Clueless with Alexis' and 'Everything's Fine' a weekly web-series designed to engage Gen Z audiences on topics ranging from environmental justice and racial equity to economic fairness and civic action. Interviewing experts and thought leaders, bringing well-researched, dynamic conversations to life.
+              </p>
+            </div>
+
+            <div class="card work-card reveal">
+              <h3>The MTV Staying Alive Foundation</h3>
+              <p>Digital Strategist: Everybody's Fight— Consultant</p>
+              <p class="work-desc">
+                  Developing and executing social media strategies to promote Everybody’s Fight: An In Bloom Series on Reproductive Freedom, a compelling docuseries highlighting the experiences of individuals seeking reproductive care, healthcare providers, and advocates navigating the challenges of a post-Roe reality.
+              </p>
+            </div>
+
+            <div class="card work-card reveal">
+              <h3>@Impact</h3>
+              <p>Digital Strategist: Everybody's Fight— Consultant</p>
+              <p class="work-desc">
+                Launched Impact's shortform video content engine, an award-winning digital platform for young changemakers, on socially impactful and culturally relevant topics.
+              </p>
+            </div>
+
+            <div class="card work-card reveal">
+              <h3>Kode with Klossy</h3>
+              <p>Content and Community Coordinator— Full-time</p>
+              <p class="work-desc">
+                  Led a record-breaking social media campaign for Kode With Klossy, driving a 200% overall increase in community engagement and achieving the highest organic reach in the organization’s history. Managed day-to-day social media operations and developed strategies that fostered a vibrant online community, including an ambassador program that significantly boosted brand alignment and interaction.
+              </p>
+            </div>
+
+        </div>
+      </div>
+
+    <!-- ===== PROJECTS ===== -->
+    <div class="tab-content" id="projects">
+
+      <div class="projects-grid">
+
+        <!-- PB RESOURCES -->
+        <div class="project-card reveal"
+            data-title="PB-Resources"
+            data-description="PB-Resources started as a response to a moment when millions of people wanted to show up, but didn’t know how. I built it as a centralized system for action—connecting education, resources, and direct pathways to civic engagement in one place.
+            The platform included tools like auto-generated emails to elected officials, curated action hubs, and accessible breakdowns of complex issues. It scaled quickly, reaching over 2 million users and becoming a go-to infrastructure for participation during a critical cultural moment.
+            More than anything, PB-Resources was proof that when you reduce friction and increase clarity, people don’t just care—they act.">
+
+          <img src="assets/proj1.jpg" />
+          <div class="project-overlay">
+            <h3>PB-Resources</h3>
+            <p class="project-sub">2M+ users · civic action infrastructure</p>
+          </div>
+        </div>
+
+        <!-- CREATORS FOR ZOHRAN -->
+        <div class="project-card reveal"
+            data-title="Creators for Zohran"
+            data-description="Creators for Zohran was a first-of-its-kind creator-led media system built to support a mayoral campaign. We organized and activated over 600 creators across platforms, generating more than 1 billion views during the last two months of the campaign.
+            Instead of treating creators as distribution, we treated them as strategists—building a system where content was native, personal, and rooted in lived experience. The result was a campaign that felt culturally relevant, algorithmically effective, and deeply human.
+            It became a case study in what happens when political communication actually meets people where they are, and when the message is strong enough to move on its own.">
+
+          <img src="assets/proj2.jpg" />
+          <div class="project-overlay">
+            <h3>Creators for Zohran</h3>
+            <p class="project-sub">1B+ reach · creator-led political distribution engine</p>
+          </div>
+        </div>
+
+        <!-- SOFTWEAR -->
+        <div class="project-card reveal"
+            data-title="Softwear by Lex"
+            data-description="Softwear by Lex began as my senior thesis at NYU Tandon and sits at the intersection of environmental systems, technology, and self-expression. The work is rooted in a specific problem: electronic waste is one of the fastest-growing environmental crises globally, with over 50 million metric tons produced each year, and rising.
+            Most of that waste isn’t just discarded, it’s displaced, ending up in landfills and informal recycling systems that disproportionately impact marginalized communities, while releasing toxic materials into the environment. Softwear by Lex is my response to that system.
+            I repurpose defunct technology—circuit boards, wires, hardware—and transform them into wearable pieces using microcontrollers, custom 3D-printed components, and recycled materials. Each piece is both functional and expressive: interactive, engineered, and intentionally visible as reclaimed technology.
+            The project challenges how we think about consumption, waste, and value—asking what it means to build within a circular system instead of extracting from it. It was also my most technically and creatively demanding work to date, pushing me to translate engineering into something physical, human, and culturally legible.
+            Softwear by Lex was awarded the Technology and Society Best Senior Project Award at NYU Tandon.
+            ">
+
+          <img src="assets/proj4.jpg" />
+          <div class="project-overlay">
+            <h3>Softwear by Lex</h3>
+            <p class="project-sub">wearable tech · fashion as storytelling system</p>
+          </div>
+        </div>
+
+        <!-- CLUELESS -->
+        <div class="project-card reveal"
+            data-title="Clueless with Alexis"
+            data-description="Clueless with Alexis is a web series built around a simple idea: no one actually knows what they’re doing, and we should talk about it more.
+            The show follows me navigating “how to be an adult” in New York City—through money, relationships, mental health, civic participation, and everything in between. It’s chaotic, honest, and grounded in real experiences, using humor as a way into bigger conversations.
+            At its core, it’s about making information feel human—turning questions people are afraid to ask into something shared, understood, and maybe even a little fun.">
+
+          <img src="assets/proj3.jpg" />
+          <div class="project-overlay">
+            <h3>Clueless with Alexis</h3>
+            <p class="project-sub">web series · culture, chaos, and growing up online</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ===== MODAL ===== -->
+    <div id="project-modal" class="project-modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+      
+
+
+      <!-- ===== WRITING ===== -->
+      <div class="tab-content" id="writing">
+        <div class="writing-list">
+          <a href="https://alexisdenisew.substack.com/p/black-women-are-in-pain-why-dont" class="writing-card">
+          <div class="card-content">
+            <h3>Yes, Black Women Are in Pain. Why Don’t You Believe Us?</h3>
+            <p>Reflections from an intimate conversation about birth care with Synclaire Warren and Elaine Welteroth, Founder of Birthfund</p>
+          </div>
+          </a>
+
+          <a href="https://medium.com/cluelessalexis/so-we-agree-thoughts-on-democracy-78022f21adc9" class="writing-card">
+          <div class="card-content">
+            <h3>So… We agree? — Thoughts on Democracy</h3>
+            <p>I was recently asked what democracy means to me, which turned out to be a more mind-bending question than it should considering we, as Americans, are indoctrinated from a young age to think that democracy is synonymous with America.</p>
+          </div>
+          </a>
+
+          <a href="https://medium.com/cluelessalexis/dear-gen-z-you-have-a-blackface-problem-too-41d152aa5af6" class="writing-card">
+          <div class="card-content">
+            <h3>Dear Gen-z, You Have a Blackface Problem Too</h3>
+            <p>American popular culture has always terrorized Black people in ways that are both blatant and inconspicuous since the beginning of not only mainstream media, but the legalized freedom of Black bodies themselves. This started with public lynchings during the middle of the eighteenth century, which occurred predominantly in the south (NAACP, “The History of Lynchings”).</p>
+          </div>
+          </a>
+
+          <a href="https://medium.com/cluelessalexis/keyword-analysis-on-access-the-great-equalizer-for-white-women-6bc862e1328c" class="writing-card">
+          <div class="card-content">
+            <h3>Keyword Analysis on Access: The Great Equalizer for White Women</h3>
+            <p>My entire life has been defined by the word access. Access is make or break. Access is the key to the entire universe, but also the thing that can shut you out from everything completely. Access determines the lives we live and how comfortable we get to be.</p>
+          </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ===== ABOUT ===== -->
+      <div class="tab-content" id="about">
+        <div class="about-wrapper">
+          <div class="about-text">
+            <p>
+              I build things on the internet that make people care, and then figure out how to turn that care into action.
+            </p>
+            <br>
+            <p>
+            I’m a 25-year-old creative technologist, digital creator, and organizer based in New York City. My work lives at the intersection of tech, culture, and public systems—focused on how ideas spread, who they reach, and what people actually do with them.
+            </p>
+            <br>
+            <p>
+              I started building PB-Resources during a moment when people were looking for ways to show up and didn’t know how. It became a toolkit for action used by over 2 million people—connecting education, resources, and direct pathways to civic engagement through things like automated outreach tools and curated infrastructure for participation. That same instinct—to make things more accessible, more usable, more human—has shaped everything I’ve built since.
+            </p>
+            <br>
+            <p>
+            From collaborating with platforms like Meta, Teen Vogue, and Goop, to building Softwear by Lex—where I explore storytelling through wearable tech, 3D-printed pieces, and creative direction—my work has always blended technical systems with culture and expression. Across projects, I move between building products, producing content, and designing experiences that translate complex ideas into something people can actually feel.
+            </p>
+            <br>
+            <p>
+              That approach scaled during my work leading creator organizing for Zohran for NYC, activating 600+ creators and reaching over 1 billion monthly views, turning distributed content into a coordinated system for political communication.
+            </p>
+            <br>
+            <p>
+                Now, as a new media Deputy Press Secretary for the City of New York, I focus on how information actually moves. I build systems that use creators, community, and the internet to translate policy into something people can see, understand, and engage with—scaling government communication in a way that reflects how people actually consume information today.
+              </p>
+              <br>
+              <p>
+                Across everything I do, the throughline is the same: making complex systems legible, making participation feel possible, and building tools that help people move from awareness to action.
+              </p>
+          </div>
+
+          <div class="about-visual">
+            <img src="assets/images/img2.jpg" />
+            <img src="assets/images/img4.jpg" />
+            <img src="assets/images/img1.jpg" />
+          </div>
+        </div>
+      </div>
+
+
+      
+
+      <!-- ===== RESUME ===== -->
+      <div class="tab-content" id="resume">
+        <a href="assets/files/Alexis_Williams_Resume.pdf" target="_blank" class="btn primary">
+          View Resume
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================= MODAL ================= -->
+  <!-- <div class="modal hidden" id="modal">
+    <div class="modal-content">
+      <button class="close-btn">×</button>
+      <div class="modal-body"></div>
+    </div>
+  </div> -->
+
+  <!-- JS -->
+  <script src="js/app.js"></script>
+
+  <div class="cursor-glow"></div>
+
+</body>
 </html>
